@@ -1,0 +1,9 @@
+.btn-edit , .btn-delete {
+    background: none;
+}
+
+.card {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
