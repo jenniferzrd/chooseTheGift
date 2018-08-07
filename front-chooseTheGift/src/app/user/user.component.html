@@ -1,36 +1,15 @@
-<h1>Users</h1>
-<!-- <div class="clear"></div>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Somme</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of users">
-      <td>{{item.firstname}}</td>
-      <td>{{item.lastname}}</td>
-      <td>{{item.money}}</td>
-      <td>
-        <button class="editIcon" (click)="edit(item)">MODIFIER</button>
-        <button class="deleteIcon" (click)="delete(item)">SUPPRIMER</button>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
+<h1 class="text-center">Participants</h1>
+
 <div class="row">
-<div *ngFor="let item of users">
+<div *ngFor="let user of users">
   <div class="col-xs-4">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">
-          <button type="button" class="btn btn-edit" (click)="edit(item)">
+          <button type="button" class="btn btn-edit" (click)="edit(user)">
             <i class="fa fa-edit"></i>
           </button>
-          <button type="button" class="btn btn-delete" (click)="delete(item)">
+          <button type="button" class="btn btn-delete" (click)="delete(user)">
             <i class="fa fa-trash"></i>
           </button>
         </h5>
@@ -39,11 +18,11 @@
             <i class="fa fa-3x fa-user-circle"></i>
           </p>
           <p>
-              {{item.firstname}}
-              {{item.lastname}}
+              {{user.firstname}}
+              {{user.lastname}}
           </p>
 
-          <p>{{item.money}}</p>
+          <p>{{user.money}} €</p>
         </div>
       </div>
     </div>
@@ -51,17 +30,4 @@
 </div>
 </div>
 
-<!-- <div *ngFor="let item of users" class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">
-          <i class="fa fa-user-circle"></i>
-        </h5>
-          <p>
-        {{item.firstname}}
-        {{item.lastname}}</p>
-      
-      <p>{{item.money}}</p>
-      <button class="editIcon" (click)="edit(item)">MODIFIER</button>
-        <button class="deleteIcon" (click)="delete(item)">SUPPRIMER</button>
-    </div>
-  </div> -->
+{{ total }}
