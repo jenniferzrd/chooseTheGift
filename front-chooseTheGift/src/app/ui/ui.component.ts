@@ -2,37 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../user/user.service';
 
-interface Items {
-  imgIdea: string;
-  price: number;
-}
-
-export const ITEMS : Items [] = [
-  {imgIdea: 'un cadeau', price: 6 },
-  {imgIdea: 'un cadeau', price: 10 },
-  {imgIdea: 'un cadeau', price: 170 }
-];
-
 @Component({
   selector: 'app-ui',
   templateUrl: './ui.component.html',
-  styleUrls: ['./ui.component.css']
+  styleUrls: ['./ui.component.css'],
+  providers:[UserService]
 })
 export class UiComponent implements OnInit {
 
-  items: Items[];
+  users: UserModel[] = [];
   total: number = 0;
   
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.items = ITEMS;
 
-    for(let item of ITEMS) {
-        this.total = this.total + item.price;
-        console.log("test");
-        };
-        return this.total;
+    this.userService.getUsers().subscribe(users => {
+      this.users = users;
+      this.users.forEach(user => {
+        console.log(user.money);
+        this.total = this.total + user.money;
+        console.log(this.total);
+      });
+    });
   }
-
 }
