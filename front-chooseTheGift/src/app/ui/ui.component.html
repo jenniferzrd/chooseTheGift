@@ -1,18 +1,38 @@
+<div class="container bandeau">
+  <div class="row d-flex justify-content-between align-items-center string-and-total">
 
-<div class="col-xs-12 bandeau">
-    <div class="row">
-  <div class="title col-xs-6">Pot de départ Unknow</div>
-    <div class="cagnotte col-xs-6">
-      {{ total }}
-      <i class="fa fa-gift"></i>
+      <div class="col-xs title delete-padding">
+        <a routerLink="/home" class="link">Pot de départ Martin</a>
+      </div>
+      <div class="col-xs d-flex align-items-center delete-padding">
+        <div class="total-cagnotte">
+          {{ total }}
+        </div>
+        <div>
+          <i class="fa fa-2x fa-gift"></i>
+        </div>
+    </div>
+
+</div>
+<div class="row participants">
+    <div class="col-12">
+      <span>Participants :</span>
+      <a routerLink="/users">
+        <i class="fa fa-user-size fa-user-circle"></i>
+      </a>
+      <a routerLink="/users">
+        <i class="fa fa-user-size fa-user-circle"></i>
+      </a>
+      <a routerLink="/users">
+        <i class="fa fa-user-size fa-user-circle"></i>
+      </a>
     </div>
   </div>
 </div>
 
 <div class="menu">
-  <a routerLink="/home">Home</a>
-  <a routerLink="/users">Users</a>
-  <a routerLink="/createusers">Create Users</a>
+
+  <!-- <a routerLink="/createusers">Create Users</a> -->
 
   <div class="outer-outlet">
     <router-outlet></router-outlet>

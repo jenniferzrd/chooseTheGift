@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 
 import { UserModel } from './../models/user.model';
 import { UserService } from './user.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-user',
@@ -18,11 +19,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
+    
   }
 
   private loadUsers(): void {
     this.userService.getUsers().subscribe(res => {
-      this.users = res;
+      this.users = res,
+      error=> console.error(error),
+      ()=> {}
 });
 }
 
@@ -33,6 +37,7 @@ public edit(user: UserModel): void {
 
 public delete(user: UserModel): void {
   this.userService.delete(user);
+  this.loadUsers();
 }
 
 }

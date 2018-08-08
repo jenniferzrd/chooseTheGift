@@ -1,3 +1,37 @@
+ .link {
+    text-decoration: none;
+    color:#28263F;
+}
+
+a {
+    text-decoration: none;
+    color:#28263F;
+}
+
 .bandeau {
-    margin-left: 20px;
+    padding: 40px 40px 20px 40px;
+    /* background-color: white; */
+}
+
+.fa-user-size {
+    font-size: 23px;
+    padding: 0px 5px 0px 5px;
+}
+
+.delete-padding {
+    padding: 0;
+}
+
+.total-cagnotte {
+    padding: 0 10px 0 10px;
+}
+
+.string-and-total {
+    background-color: white;
+    padding: 10px;
+}
+
+.participants {
+    background-color: white;
+    padding: 10px 0px 10px 0px; 
 }

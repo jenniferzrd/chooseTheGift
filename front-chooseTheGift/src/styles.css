@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+/* .bg {
+    background: #575fcf;
+    background: -moz-linear-gradient(-45deg, #575fcf 0%, #81ecec 60%);
+    background: -webkit-linear-gradient(-45deg, #575fcf 0%,#81ecec 60%); 
+    background: linear-gradient(135deg, #575fcf 0%,#81ecec 60%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575fcf', endColorstr='#81ecec',GradientType=1 );
+} */
+
+.bg-white {
+    background: white;
+}
+.text-color-darkpurple {
+    color: #28263F;
+}
+
+.text-color-pastelpink {
+    color:#fab1a0;
+}
+
+.text-color-pastellemon {
+    color: #ffeaa7;
+}
+
+.text-color-orange {
+    color: #ffa801;
+}
+
+.text-color-red {
+    color:#f53b57;
+}
+
+
+.text-color-flashturquoise {
+    color: #81ecec;
+}

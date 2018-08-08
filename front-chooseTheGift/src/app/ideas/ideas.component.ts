@@ -1,15 +1,13 @@
 import { Component, OnInit, Input, NgModule} from '@angular/core';
-// import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-
 interface Items {
   imgIdea: string;
   price: number;
 }
 
 export const ITEMS : Items [] = [
-  {imgIdea: 'un cadeau', price: 6 },
-  {imgIdea: 'un cadeau', price: 10 },
-  {imgIdea: 'un cadeau', price: 170 }
+  {imgIdea: '../assets/images/random_img.jpg', price: 6 },
+  {imgIdea: '../assets/images/random_img.jpg', price: 12 },
+  {imgIdea: '../assets/images/random_img.jpg', price: 170 }
 ];
 
 @NgModule ({
@@ -24,8 +22,6 @@ export const ITEMS : Items [] = [
 
 export class IdeasComponent implements OnInit {
 
-
-  closeResult: string;
   items: Items[];
 
   constructor() { }

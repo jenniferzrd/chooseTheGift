@@ -20,9 +20,9 @@ export class UiComponent implements OnInit {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
       this.users.forEach(user => {
-        console.log(user.money);
+        // console.log(user.money);
         this.total = this.total + user.money;
-        console.log(this.total);
+        // console.log(this.total);
       });
     });
   }

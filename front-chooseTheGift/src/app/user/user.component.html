@@ -1,13 +1,14 @@
+
 <h1 class="text-center">Participants</h1>
 
-<div class="row">
-<div *ngFor="let user of users">
-  <div class="col-xs-4">
+<div class="container">
+<div class="row d-flex justify-content-center">
+<div *ngFor="let user of users" class="col-xs-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title text-center">
           <button type="button" class="btn btn-edit" (click)="edit(user)">
-            <i class="fa fa-edit"></i>
+              <a routerLink="/createusers"><i class="fa fa-edit"></i></a>
           </button>
           <button type="button" class="btn btn-delete" (click)="delete(user)">
             <i class="fa fa-trash"></i>
@@ -28,6 +29,6 @@
     </div>
   </div>
 </div>
-</div>
 
-{{ total }}
+<a routerLink="/createusers">ajouter</a>
+</div>
