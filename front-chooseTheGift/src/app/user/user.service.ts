@@ -7,7 +7,7 @@ import { UserModel } from '../models/user.model';
 @Injectable()
 export class UserService {
 
-  private baseUrl:string='http://localhost:8080/';
+  private baseUrl: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
@@ -15,8 +15,8 @@ export class UserService {
     return this.http.get<UserModel[]>(this.baseUrl + "getUsers");
   }
 
-  public delete(user: UserModel): void {
-    this.http.post(this.baseUrl + "deleteUser", JSON.stringify(user)).subscribe();
-}
+  public delete(user: UserModel): Observable<any> {
+    return this.http.post(this.baseUrl + "deleteUser", JSON.stringify(user));
+  }
 
 }

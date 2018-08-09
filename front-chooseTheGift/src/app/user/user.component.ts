@@ -13,31 +13,29 @@ import 'rxjs/add/operator/map';
 })
 export class UserComponent implements OnInit {
 
-    private users: Array<UserModel>;
+  private users: Array<UserModel>;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.loadUsers();
-    
   }
 
-  private loadUsers(): void {
+  loadUsers() {
     this.userService.getUsers().subscribe(res => {
-      this.users = res,
-      error=> console.error(error),
-      ()=> {}
-});
-}
+      this.users = res;
+    })
+  };
 
-public edit(user: UserModel): void {
-  sessionStorage.setItem('user', JSON.stringify(user));
-  this.router.navigate(['/createusers']);
-}
+  edit(user: UserModel) {
+    sessionStorage.setItem('user', JSON.stringify(user));
+    this.router.navigate(['/createusers']);
+  }
 
-public delete(user: UserModel): void {
-  this.userService.delete(user);
-  this.loadUsers();
-}
-
+  delete(user: UserModel) {
+    this.userService.delete(user).subscribe(data => {
+      this.users = data;
+      this.loadUsers();
+    })
+  }
 }

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectComponent } from './project/project.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -11,4 +12,5 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UserComponent },
     { path: 'createusers', component: CreateUserComponent },
+    { path: 'project', component: ProjectComponent }
 ];

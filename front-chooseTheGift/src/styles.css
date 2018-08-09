@@ -34,3 +34,9 @@
 .text-color-flashturquoise {
     color: #81ecec;
 }
+
+/* BUTTONS (EDIT, DELETE) */
+
+.btn-modal, .btn-like, .btn-edit, .btn-delete {
+    background: none;
+}

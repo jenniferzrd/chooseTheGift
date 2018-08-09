@@ -13,6 +13,7 @@ import { UiComponent } from './ui/ui.component';
 import { IdeasComponent } from './ideas/ideas.component';
 import { CreateIdeaComponent } from './create-idea/create-idea.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectComponent } from './project/project.component';
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     UiComponent,
     IdeasComponent,
     CreateIdeaComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
