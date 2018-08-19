@@ -1,34 +1,40 @@
-
-<h1 class="text-center">Participants</h1>
+<!-- <h1 class="text-center">
+  Participants</h1> -->
 
 <div class="container">
-<div class="row d-flex justify-content-center">
-<div *ngFor="let user of users" class="col-xs-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">
-          <button type="button" class="btn btn-edit" (click)="edit(user)">
-              <a routerLink="/createusers"><i class="fa fa-edit"></i></a>
-          </button>
-          <button type="button" class="btn btn-delete" (click)="delete(user)">
-            <i class="fa fa-trash"></i>
-          </button>
-        </h5>
-        <div class="text-center">
-          <p>
-            <i class="fa fa-3x fa-user-circle"></i>
-          </p>
-          <p>
-              {{user.firstname}}
-              {{user.lastname}}
-          </p>
+  <div class="row d-flex justify-content-around">
+    <div *ngFor="let user of users" class="col-xs-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            <button type="button" class="btn btn-edit" (click)="edit(user)">
+              <a routerLink="/createusers">
+                <i class="fa fa-edit"></i>
+              </a>
+            </button>
+            <button type="button" class="btn btn-delete" (click)="delete(user)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </h5>
+          <div class="text-center">
+            <p>
+              <i class="fa fa-3x fa-user-circle"></i>
+            </p>
+            <p>
+              {{user.firstname}} {{user.lastname}}
+            </p>
 
-          <p>{{user.money}} €</p>
+            <p>{{user.money}} €</p>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<a routerLink="/createusers">ajouter</a>
+  <div class="row d-flex justify-content-center">
+    <div class="addUser"></div>
+      <a routerLink="/createusers">
+        <i class="fa fa-2x fa-plus-circle"></i>
+      </a>
+    </div>
 </div>

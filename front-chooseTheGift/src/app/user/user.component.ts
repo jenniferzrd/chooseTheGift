@@ -3,7 +3,6 @@ import { Router } from "@angular/router";
 
 import { UserModel } from './../models/user.model';
 import { UserService } from './user.service';
-import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-user',

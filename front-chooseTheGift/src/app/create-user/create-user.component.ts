@@ -16,8 +16,7 @@ export class CreateUserComponent implements OnInit {
   private isValid: boolean = true;
   private message: string = "";
 
-  constructor(private createUserService: CreateUserService,
-    private router: Router) {
+  constructor(private createUserService: CreateUserService, private router: Router) {
       
       if (sessionStorage.getItem("user")) {
         this.user = JSON.parse(sessionStorage.getItem("user"));

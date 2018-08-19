@@ -64,9 +64,9 @@ public class IdeaController {
 	private boolean validate(Idea idea) {
 		boolean isValid = true;
 
-		if (StringUtils.trimToNull(idea.getTitle()) == null) {
-			isValid = false;
-		}
+//		if (StringUtils.trimToNull(idea.getTitle()) == null) {
+//			isValid = false;
+//		}
 
 		return isValid;
 	}

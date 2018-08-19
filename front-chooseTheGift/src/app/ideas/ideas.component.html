@@ -1,14 +1,7 @@
-<!-- Button trigger modal -->
-<div class="container text-right">
-  <button type="button" class="btn btn-modal" data-toggle="modal" data-target="#exampleModal">
-    <span class="d-flex align-item-center"> 
-      Proposer une idée 
-      <i class="fa fa-2x fa-plus-circle"></i>
-    </span>
-  </button>
-</div>
+<!-- <app-create-idea></app-create-idea> -->
+<!-- MOCK -->
 
-<div class="row d-flex justify-content-center">
+<!-- <div class="row d-flex justify-content-center">
   <div *ngFor="let item of items">
     <div class="col">
       <div class="card">
@@ -45,39 +38,51 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<!-- FIN MOCK -->
+<div class="row d-flex justify-content-center">
+  <div *ngFor="let idea of ideas">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div card-header class="header">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Ajouter une idée
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="text-center img-modal-idea">
-            <i class="fa fa-5x fa-image"></i>
+            <div class="text-right marginb-btnedit-btndelete">
+              <button type="button" class="btn btn-edit text-color-orange" (click)="edit(idea)">
+                <a routerLink="/createidea">
+                  <i class="fa fa-edit"></i>
+                </a>
+              </button>
+              <button type="button" class="btn btn-delete text-color-red" (click)="delete(idea)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+
+            <!-- {{ idea.title }} -->
+            <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
           </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Url de l'image</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="http://...">
+
+          <div class="d-flex price-and-like">
+            <div class="col">
+              <button type="button" class="btn btn-like" (click)="like(item)">
+                <i class="fa fa-heart"></i>
+              </button>
+            </div>
+            <div class="col text-right">
+              <h5 class="card-title text-color-darkpurple">
+                {{ idea.price }} €
+              </h5>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Son prix</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Veuillez ajouter le prix">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+        </div>
       </div>
     </div>
   </div>
+  <div class="row d-flex justify-content-center">
+    <div class="addIdea"></div>
+      <a routerLink="/createidea">
+        <i class="fa fa-2x fa-plus-circle"></i>
+      </a>
+    </div>
 </div>
