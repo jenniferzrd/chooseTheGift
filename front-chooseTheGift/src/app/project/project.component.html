@@ -1,0 +1,132 @@
+<!-- MOCK -->
+<!--   
+<div class="container">
+  <div class="container-title-page">
+    <div class="row">
+      <div class="container-fluid d-flex align-items-center">
+      <div class="col-8 text-right title-page font-lato">
+        PROJETS
+      </div>
+      <div class="col-4 text-left">
+        <a routerLink="/createproject">
+          <i class="fa fa-2x fa-plus-circle"></i>
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+ 
+
+  <div class="border-container">
+    <div class="row border-row">
+      <div class="col-6">
+        <span class="project-title font-oxy"> Titre</span>
+      </div>
+      <div class="col-6 text-right font-price font-oxy">
+        <span> prix €</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-container">
+    <div class="row border-row">
+      <div class="col-6">
+        <span class="project-title"> Titre</span>
+      </div>
+      <div class="col-6 text-right">
+        <span> prix €</span>
+      </div>
+    </div>
+  </div>
+</div>  -->
+
+<!-- OLD -->
+<!-- <div class="container">
+    <div class="row d-flex justify-content-around">
+      <div *ngFor="let project of projects" class="col-xs-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              <button type="button" class="btn btn-edit" (click)="edit(project)">
+                <a routerLink="/createproject">
+                  <i class="fa fa-edit"></i>
+                </a>
+              </button>
+              <button type="button" class="btn btn-delete" (click)="delete(project)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </h5>
+            <div class="text-center">
+              <p>
+                <i class="fa fa-3x fa-user-circle"></i>
+              </p>
+              <p>
+                {{project.title}}
+              </p>
+  
+              <p>{{project.totalmoney}} €</p>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="addProject"></div>
+        <a routerLink="/createproject">
+          <i class="fa fa-2x fa-plus-circle"></i>
+        </a>
+      </div>
+  </div> -->
+
+  <!-- NEW -->
+  
+  <div class="container">
+      <div class="container-title-page">
+        <div class="row">
+          <div class="container-fluid d-flex align-items-center">
+          <div class="col-8 text-right title-page font-lato">
+            PROJETS
+          </div>
+
+          <div class="col-4 text-left">
+            <a routerLink="/createproject">
+              <i class="fa fa-2x fa-plus-circle"></i>
+            </a>
+          </div>
+
+        </div>
+        </div>
+      </div>
+ 
+      <div *ngFor="let project of projects" class="border-container">
+        <!-- <div class="row">
+          <div class="col paddingzero">
+                <button type="button" class="btn btn-edit" (click)="edit(project)">
+                  <a routerLink="/createproject">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                </button>
+                
+                <button type="button" class="btn btn-delete" (click)="delete(project)">
+                  <i class="fa fa-trash"></i>
+                </button>
+    
+            </div> 
+        </div>-->
+        <div class="row border-row">
+          <div class="col-9">
+            <span class="project-title font-oxy"> 
+                <a routerLink="/ideas">  
+                  {{project.title}}
+                  </a>
+            </span>
+          </div>
+          
+          <div class="col-3 text-right font-price font-oxy">
+            <span> {{project.totalmoney}} €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  

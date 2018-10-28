@@ -7,6 +7,10 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575fcf', endColorstr='#81ecec',GradientType=1 );
 } */
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* COULEURS */
+
 .bg-white {
     background: white;
 }
@@ -35,8 +39,46 @@
     color: #81ecec;
 }
 
+/* POSITION */
+
+.container-title-page {
+    padding: 50px 5px 50px 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.container-title-page-short {
+    padding: 10px 5px 10px 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.padding-top-form {
+    padding-top: 30px;
+}
+
+.padding-top-form-element {
+    padding-top: 20px;
+}
 /* BUTTONS (EDIT, DELETE) */
 
 .btn-modal, .btn-like, .btn-edit, .btn-delete {
     background: none;
 }
+
+/* FONTS */
+
+.title-page {
+    font-size: 30px;
+}
+
+.title-page-short {
+    font-size: 20px;
+}
+
+.font-oxy {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.font-lato {
+    font-family: 'Lato', sans-serif;
+}
+

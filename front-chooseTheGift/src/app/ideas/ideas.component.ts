@@ -7,16 +7,17 @@ import { IdeasService } from './ideas.service';
 
 /// DONNEES MOCK ///
 
-// interface Items {
-//   imgIdea: string;
-//   price: number;
-// }
+interface Items {
+  imgIdea: string;
+  price: number;
+}
 
-// export const ITEMS : Items [] = [
-//   {imgIdea: '../assets/images/random_img.jpg', price: 6 },
-//   {imgIdea: '../assets/images/random_img.jpg', price: 12 },
-//   {imgIdea: '../assets/images/random_img.jpg', price: 170 }
-// ];
+export const ITEMS : Items [] = [
+  {imgIdea: '../assets/images/random_img.jpg', price: 6 },
+  {imgIdea: '../assets/images/random_img.jpg', price: 12 },
+  {imgIdea: '../assets/images/random_img.jpg', price: 170 },
+   {imgIdea: '../assets/images/random_img.jpg', price: 170 }
+];
 
 @Component({
   selector: 'app-ideas',
@@ -30,7 +31,7 @@ export class IdeasComponent implements OnInit {
   private ideas: Array<IdeaModel>;
 
   // MOCK
-  // items: Items[];
+  items: Items[];
 
   constructor(
     private ideasService: IdeasService, private router: Router
@@ -38,7 +39,7 @@ export class IdeasComponent implements OnInit {
 
   ngOnInit() {
     // MOCK
-    // this.items = ITEMS;
+    this.items = ITEMS;
     this.loadIdeas();
   }
 

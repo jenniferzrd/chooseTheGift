@@ -20,13 +20,13 @@ export class CreateIdeaComponent implements OnInit {
 
     if (sessionStorage.getItem("idea")) {
       this.idea = JSON.parse(sessionStorage.getItem("idea"));
+      sessionStorage.clear();
     } else {
       this.idea = new IdeaModel();
       this.idea.title = "";
       this.idea.comment = "";
       this.idea.jaime = false;
       this.idea.quantity = 0;
-      console.log("test");
     }
   }
 

@@ -1,7 +1,6 @@
 <!-- <app-create-idea></app-create-idea> -->
-<!-- MOCK -->
-
-<!-- <div class="row d-flex justify-content-center">
+<!-- 
+<div class="row d-flex justify-content-center">
   <div *ngFor="let item of items">
     <div class="col">
       <div class="card">
@@ -38,9 +37,10 @@
       </div>
     </div>
   </div>
-</div> -->
-<!-- FIN MOCK -->
-<div class="row d-flex justify-content-center">
+</div>  -->
+
+<!-- OLD -->
+<!-- <div class="row d-flex justify-content-center">
   <div *ngFor="let idea of ideas">
     <div class="col">
       <div class="card">
@@ -58,7 +58,6 @@
               </button>
             </div>
 
-            <!-- {{ idea.title }} -->
             <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
           </div>
 
@@ -85,4 +84,102 @@
         <i class="fa fa-2x fa-plus-circle"></i>
       </a>
     </div>
+</div> -->
+
+<!-- <div class="container">
+        <div class="row d-flex justify-content-around">
+            <div *ngFor="let item of items" class="col-6 paddingzero test">
+              
+              <div class="card">
+
+                  <div card-header class="header">
+
+                      <div class="text-right">
+                        <button type="button" class="btn btn-edit text-color-orange" (click)="onEdit(i)">
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-delete text-color-red" (click)="onDelete(i)">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </div>
+          
+            <img class="card-img-top" src="{{ item.imgIdea }}" alt="Card image cap">
+            
+          </div>
+
+          <div class="d-flex">
+              <div class="col">
+                <button type="button" class="btn btn-like" (click)="like(item)">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </div>
+              <div class="col text-right">
+                <h5 class="card-title text-color-darkpurple">
+                  {{ item.price }} €
+                </h5>
+              </div>
+            </div>
+</div>
+</div>
+        </div>
+</div> -->
+
+
+<div class="container">
+
+    <div class="container-title-page">
+        <div class="row">
+          <div class="container-fluid d-flex align-items-center">
+          <div class="col-8 text-right title-page font-lato">
+            GALLERIE
+          </div>
+
+          <div class="col-4 text-left">
+            <a routerLink="/createidea">
+              <i class="fa fa-2x fa-plus-circle"></i>
+            </a>
+          </div>
+
+        </div>
+        </div>
+      </div>
+
+  <div class="row d-flex justify-content-around">
+    <div *ngFor="let idea of ideas" class="col-6 paddingzero test">
+
+      <div class="card">
+        <div class="card-body paddingzero">
+          <div card-header class="header">
+
+            <div class="text-right">
+              <button type="button" class="btn btn-edit text-color-orange" (click)="edit(idea)">
+                <a routerLink="/createidea">
+                  <i class="fa fa-edit"></i>
+                </a>
+              </button>
+              <button type="button" class="btn btn-delete text-color-red" (click)="delete(idea)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </div>
+
+            <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
+
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <div class="col">
+            <button type="button" class="btn btn-like" (click)="like(item)">
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+          <div class="col text-right">
+            <h5 class="card-title text-color-darkpurple">
+              {{ idea.price }} €
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
