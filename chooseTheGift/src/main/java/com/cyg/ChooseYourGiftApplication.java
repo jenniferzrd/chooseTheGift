@@ -10,8 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.cyg.dao.ProjectRepo;
+import com.cyg.dao.RolesRepo;
 import com.cyg.dao.UserRepo;
 import com.cyg.models.Project;
+import com.cyg.models.Roles;
 import com.cyg.models.User;
 
 @SpringBootApplication
@@ -23,6 +25,9 @@ public class ChooseYourGiftApplication implements CommandLineRunner {
 	
 	@Autowired
 	ProjectRepo projectRepository;
+	
+	@Autowired
+	RolesRepo rolesRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ChooseYourGiftApplication.class, args);
@@ -38,11 +43,15 @@ public class ChooseYourGiftApplication implements CommandLineRunner {
     	
     	List<User> user = userRepository.findAll();
         List<Project> project = projectRepository.findAll();
+        List<Roles> roles = rolesRepository.findAll();
          
         System.out.println("===================User:==================");
         user.forEach(System.out::println);
         
         System.out.println("===================Project:==================");
         project.forEach(System.out::println);
+        
+        System.out.println("===================Roles:==================");
+        roles.forEach(System.out::println);
 }
 }
