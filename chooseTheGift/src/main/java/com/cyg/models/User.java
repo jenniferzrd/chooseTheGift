@@ -1,10 +1,14 @@
 package com.cyg.models;
 
+import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
 
 @Entity
 @Table(name="user")
@@ -21,23 +25,50 @@ public class User extends IdEntity {
 	@Column(name = "money", nullable = false)
 	private int money;
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<ProjectsUsers> projectsUsers;
+	
+	public User() {}
+	
 	public String getFirstname() {
 		return firstname;
 	}
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+	
 	public String getLastname() {
 		return lastname;
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+	
 	public int getMoney() {
 		return money;
 	}
 	public void setMoney(int money) {
 		this.money = money;
+	}
+	
+	public User(String firstname, String lastname, int money) {
+		
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.money = money;
+	}
+	
+	public User(String firstname, String lastname, int money, List<ProjectsUsers> projectsUsers) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.money = money;
+		this.projectsUsers = projectsUsers;
+	}
+	
+	public String toString(){
+		String info = String.format("User: %s", this.firstname);
+		return info;
 	}
 	
 }
