@@ -4,7 +4,6 @@ import { Router } from "@angular/router";
 import { IdeaModel } from './../models/idea.model';
 import { IdeasService } from './ideas.service';
 
-
 /// DONNEES MOCK ///
 
 interface Items {
@@ -29,6 +28,10 @@ export const ITEMS : Items [] = [
 export class IdeasComponent implements OnInit {
 
   private ideas: Array<IdeaModel>;
+  private idea: IdeaModel;
+  
+  wasClicked = false;
+  idee = false;
 
   // MOCK
   items: Items[];
@@ -59,5 +62,15 @@ export class IdeasComponent implements OnInit {
       this.ideas = data;
       this.loadIdeas();
     })
+  }
+
+  like(e, idee, idea:IdeaModel) {
+    this.wasClicked = !this.wasClicked;
+    if(this.wasClicked) {
+      e.jaime = true;
+      idee.target.style.color = 'red';
+    } else {
+      e.jaime = false;
+    }
   }
 }

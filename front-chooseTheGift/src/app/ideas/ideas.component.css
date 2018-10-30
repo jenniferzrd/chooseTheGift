@@ -67,3 +67,10 @@
 .card-title {
     margin-bottom: 0;
 }
+
+.active {
+    color: red;
+}
+.inactive {
+    color: black;
+}

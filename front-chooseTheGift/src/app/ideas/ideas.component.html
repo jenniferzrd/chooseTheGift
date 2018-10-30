@@ -169,9 +169,19 @@
 
         <div class="d-flex">
           <div class="col">
-            <button type="button" class="btn btn-like" (click)="like(item)">
+            <!-- <button type="button" class="btn btn-like" [class.active]="wasClicked" (click)="like(idea)">
+              <i class="fa fa-heart"></i>
+            </button> -->
+            <!-- <button type="button" class="btn btn-like active inactive" (click)="like(idea,$event)">
+              <i class="fa fa-heart"></i>
+            </button> -->
+            
+            <button type="button" class="btn btn-like" (click)="like(idea, $event)">
               <i class="fa fa-heart"></i>
             </button>
+
+            {{ idea.jaime }}
+
           </div>
           <div class="col text-right">
             <h5 class="card-title text-color-darkpurple">
