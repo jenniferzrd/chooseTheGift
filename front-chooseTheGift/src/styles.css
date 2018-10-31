@@ -58,10 +58,50 @@
 .padding-top-form-element {
     padding-top: 20px;
 }
-/* BUTTONS (EDIT, DELETE) */
 
-.btn-modal, .btn-like, .btn-edit, .btn-delete {
+.padding-top-zero {
+    padding-top: 0 !important;
+}
+
+.paddingzero {
+    padding: 0 !important;
+}
+
+/* BUTTONS */
+
+.btn-modal, .btn-like, .btn-edit, .btn-delete, .btn-check {
     background: none;
+}
+
+.btn-edit {
+    opacity: 0.2;
+    padding: 2px;
+}
+.btn-edit:hover {
+    opacity: 1;
+}
+
+.btn-delete {
+    opacity: 0.2;
+    padding: 2px; 
+}
+.btn-delete:hover {
+    opacity: 1;
+}
+
+.btn-like:hover {
+    color:#ffeaa7;
+}
+
+.btn-check {
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: #81ecec;
+    border: none;
+}
+.btn-check:hover {
+    color: #2abe25;
 }
 
 /* FONTS */
@@ -81,4 +121,12 @@
 .font-lato {
     font-family: 'Lato', sans-serif;
 }
+.text-bold {
+    font-weight: bold;
+}
 
+/* AUTRES */
+
+a {
+    text-decoration: none !important;
+}

@@ -8,6 +8,7 @@ import { IdeasComponent } from './ideas/ideas.component';
 import { ProjectComponent } from './project/project.component';
 import { CreateIdeaComponent } from './create-idea/create-idea.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     { path: 'createusers', component: CreateUserComponent },
     { path: 'project', component: ProjectComponent },
     { path: 'createidea', component: CreateIdeaComponent },
-    { path: 'createproject', component: CreateProjectComponent }
+    { path: 'createproject', component: CreateProjectComponent },
+    { path: 'cart', component: CartComponent }
 ];

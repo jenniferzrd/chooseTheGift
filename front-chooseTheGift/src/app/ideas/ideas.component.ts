@@ -68,9 +68,15 @@ export class IdeasComponent implements OnInit {
     this.wasClicked = !this.wasClicked;
     if(this.wasClicked) {
       e.jaime = true;
-      idee.target.style.color = 'red';
+      idee.target.style.color = '#f53b57';
     } else {
       e.jaime = false;
+      idee.target.style.color = '#fab1a0';
     }
+  }
+
+  selected(idea: IdeaModel) {
+    sessionStorage.setItem('idea', JSON.stringify(idea));
+    this.router.navigate(['/cart']);
   }
 }

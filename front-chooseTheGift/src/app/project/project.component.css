@@ -31,3 +31,11 @@
     display: flex !important;
     justify-content: center !important;
 }
+
+.paddingzero {
+    padding: 0!important;
+}
+
+.ptop {
+    padding-top: 20px;
+}

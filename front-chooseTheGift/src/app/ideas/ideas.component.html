@@ -125,7 +125,7 @@
 </div> -->
 
 
-<div class="container">
+<div class="container mbottom">
 
     <div class="container-title-page">
         <div class="row">
@@ -145,42 +145,40 @@
       </div>
 
   <div class="row d-flex justify-content-around">
-    <div *ngFor="let idea of ideas" class="col-6 paddingzero test">
+    <div *ngFor="let idea of ideas" class="col-6 paddingzero padding-between-idea mtop">
 
       <div class="card">
-        <div class="card-body paddingzero">
           <div card-header class="header">
 
             <div class="text-right">
-              <button type="button" class="btn btn-edit text-color-orange" (click)="edit(idea)">
+              <button type="button" class="btn btn-edit paddingzero" (click)="edit(idea)">
                 <a routerLink="/createidea">
                   <i class="fa fa-edit"></i>
                 </a>
               </button>
-              <button type="button" class="btn btn-delete text-color-red" (click)="delete(idea)">
+              <button type="button" class="btn btn-delete text-color-red paddingzero" (click)="delete(idea)">
                 <i class="fa fa-trash"></i>
               </button>
             </div>
-
-            <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
-
           </div>
-        </div>
+
+          <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
+
+
+        <div class="card-body paddingzero">
+            <p class="text-card font-lato text-color-darkpurple"> {{ idea.title }} </p>
 
         <div class="d-flex">
-          <div class="col">
-            <!-- <button type="button" class="btn btn-like" [class.active]="wasClicked" (click)="like(idea)">
-              <i class="fa fa-heart"></i>
-            </button> -->
-            <!-- <button type="button" class="btn btn-like active inactive" (click)="like(idea,$event)">
-              <i class="fa fa-heart"></i>
-            </button> -->
-            
+          <div class="col d-flex align-items-center">
+
             <button type="button" class="btn btn-like" (click)="like(idea, $event)">
               <i class="fa fa-heart"></i>
             </button>
 
-            {{ idea.jaime }}
+            <!-- {{ idea.jaime }} -->
+            <button class="btn-check" *ngIf="idea.jaime === true" (click)="selected(idea)">
+            <i class="fa fa-check-circle"></i>
+             </button>
 
           </div>
           <div class="col text-right">
@@ -188,6 +186,7 @@
               {{ idea.price }} €
             </h5>
           </div>
+        </div>
         </div>
       </div>
     </div>

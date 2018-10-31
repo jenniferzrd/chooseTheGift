@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatInputModule } from '@angular/material/input';
     CreateIdeaComponent,
     HomeComponent,
     ProjectComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

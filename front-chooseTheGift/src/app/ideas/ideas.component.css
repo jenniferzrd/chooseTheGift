@@ -1,10 +1,12 @@
-.btn-like {
+.card {
+    border: none;
+    border : 0px;
     padding: 0;
     margin: 0;
 }
 
-.fa-plus-circle {
-    padding-left: 10px; 
+.card-title {
+    margin-bottom: 0;
 }
 
 .imgIdea {
@@ -17,60 +19,66 @@
     margin-bottom: 10px;
 }
 
-.marginb-btnedit-btndelete {
-    margin-bottom: 20px;
-}
-
 .price-and-like {
     margin-top: 20px;
 }
 
-.blue {
-    background: blue;
-}
-.red {
-    background: red;
-}
-.green {
-    background: green;
-}
-.violet {
-    background: violet;
-}
-.paddingl {
-    padding: 0 0 0 2px;
-
-}
-
-.paddingzero {
-    padding: 0;
-}
-.paddingr {
-    padding: 0 2px 0 0;
-}
-
-.card {
-    border: none;
-    border : 0px;
-    padding: 0;
-    margin: 0;
-}
-
-.test:nth-child(2n+1) {
-    padding-right:2px;
-}
-
-.test:nth-child(2n) {
-    padding-left:2px;
-}
-
-.card-title {
-    margin-bottom: 0;
-}
+/* COLORS */
 
 .active {
     color: red;
 }
 .inactive {
     color: black;
+}
+
+.text-card {
+    padding-top: 5px;
+    padding-left: 15px;
+    margin: 0;
+}
+
+/* BUTTON */
+
+.btn-like {
+    padding: 0;
+    margin: 0;
+    color:#fab1a0;
+}
+
+.fa-plus-circle {
+    padding-left: 10px; 
+}
+
+.fa-check-circle {
+    padding-left: 10px;
+}
+
+/* CORRECTION POSITION  */
+
+.mtop {
+    margin-top: 20px;
+}
+.mbottom {
+    margin-bottom: 50px;
+}
+
+.marginb-btnedit-btndelete {
+    margin-bottom: 20px;
+}
+
+.padding-between-idea:nth-child(2n+1) {
+    padding-right:2px;
+}
+
+.padding-between-idea:nth-child(2n) {
+    padding-left:2px;
+}
+
+.paddingl {
+    padding: 0 0 0 2px;
+}
+
+.paddingr {
+    padding: 0 2px 0 0;
 }

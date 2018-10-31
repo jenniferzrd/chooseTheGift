@@ -100,22 +100,24 @@
       </div>
  
       <div *ngFor="let project of projects" class="border-container">
+       
         <!-- <div class="row">
-          <div class="col paddingzero">
-                <button type="button" class="btn btn-edit" (click)="edit(project)">
+          <div class="col text-right">
+                <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
                   <a routerLink="/createproject">
                     <i class="fa fa-edit"></i>
                   </a>
                 </button>
                 
-                <button type="button" class="btn btn-delete" (click)="delete(project)">
+                <button type="button" class="btn btn-delete paddingzero" (click)="delete(project)">
                   <i class="fa fa-trash"></i>
                 </button>
     
             </div> 
-        </div>-->
+        </div> -->
+
         <div class="row border-row">
-          <div class="col-9">
+          <div class="col-6">
             <span class="project-title font-oxy"> 
                 <a routerLink="/ideas">  
                   {{project.title}}
@@ -123,8 +125,20 @@
             </span>
           </div>
           
-          <div class="col-3 text-right font-price font-oxy">
+          <div class="col text-right font-price font-oxy">
             <span> {{project.totalmoney}} €</span>
+          </div>
+
+          <div class="col d-flex align-items-center">
+              <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
+                  <a routerLink="/createproject">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                </button>
+                
+                <button type="button" class="btn btn-delete paddingzero text-color-red" (click)="delete(project)">
+                  <i class="fa fa-trash"></i>
+                </button>
           </div>
         </div>
       </div>
