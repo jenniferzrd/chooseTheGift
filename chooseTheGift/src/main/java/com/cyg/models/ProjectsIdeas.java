@@ -39,10 +39,10 @@ public class ProjectsIdeas {
     @JoinColumn(name = "id_projects", insertable = false, updatable = false)
 	private Project project;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JoinColumn(name = "id_ideas", insertable = false, updatable = false)
-	private Idea idea;
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//    @JoinColumn(name = "id_ideas", insertable = false, updatable = false)
+//	private Idea idea;
 
 	public Project getProject() {
 		return project;
@@ -52,18 +52,18 @@ public class ProjectsIdeas {
 		this.project = project;
 	}
 
-	public Idea getIdea() {
-		return idea;
-	}
+//	public Idea getIdea() {
+//		return idea;
+//	}
+//
+//	public void setIdea(Idea idea) {
+//		this.idea = idea;
+//	}
 
-	public void setIdea(Idea idea) {
-		this.idea = idea;
-	}
-
-	public ProjectsIdeas(ProjectsIdeasId projectsIdeasId, Project project, Idea idea) {
-		super();
-		this.projectsIdeasId = projectsIdeasId;
-		this.project = project;
-		this.idea = idea;
-	}
+//	public ProjectsIdeas(ProjectsIdeasId projectsIdeasId, Project project, Idea idea) {
+//		super();
+//		this.projectsIdeasId = projectsIdeasId;
+//		this.project = project;
+//		this.idea = idea;
+//	}
 }

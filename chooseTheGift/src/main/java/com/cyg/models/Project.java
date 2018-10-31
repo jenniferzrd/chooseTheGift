@@ -22,11 +22,11 @@ public class Project extends IdEntity {
 	@Column(name = "totalmoney")
 	private int totalMoney;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ProjectsUsers> projectsUsers;
+//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	private List<ProjectsUsers> projectsUsers;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ProjectsIdeas> projectsIdeas;
+//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	private List<ProjectsIdeas> projectsIdeas;
 	
 	public Project() {}
 	
@@ -44,11 +44,22 @@ public class Project extends IdEntity {
 		this.totalMoney = totalMoney;
 	}
 	
-	public Project(String title, int totalMoney, List<ProjectsUsers> projectsUsers, List<ProjectsIdeas> projectsIdeas) {
-		this.title = title;
-		this.totalMoney = totalMoney;
-		this.projectsUsers = projectsUsers;
-		this.projectsIdeas = projectsIdeas;
+//	public Project(String title, int totalMoney, List<ProjectsUsers> projectsUsers, List<ProjectsIdeas> projectsIdeas) {
+//		this.title = title;
+//		this.totalMoney = totalMoney;
+//		this.projectsUsers = projectsUsers;
+//		this.projectsIdeas = projectsIdeas;
+//}
+	
+//	public Project(String title, int totalMoney, List<ProjectsUsers> projectsUsers) {
+//	this.title = title;
+//	this.totalMoney = totalMoney;
+//	this.projectsUsers = projectsUsers;
+//}
+	
+	public Project(String title, int totalMoney) {
+	this.title = title;
+	this.totalMoney = totalMoney;
 }
 	
 	public String toString(){

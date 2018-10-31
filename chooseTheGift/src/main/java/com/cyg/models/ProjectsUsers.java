@@ -33,15 +33,15 @@ public class ProjectsUsers {
 	
 	public ProjectsUsers() {}
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JoinColumn(name = "id_users", insertable = false, updatable = false)
-	private User user;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JoinColumn(name = "id_plan", insertable = false, updatable = false)
-	private Project project;
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//    @JoinColumn(name = "id_users", insertable = false, updatable = false)
+//	private User user;
+//	
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//    @JoinColumn(name = "id_plan", insertable = false, updatable = false)
+//	private Project project;
 	
 	public ProjectsUsersId getProjectsUsersId() {
 		return projectsUsersId;
@@ -51,25 +51,25 @@ public class ProjectsUsers {
 		this.projectsUsersId = projectsUsersId;
 	}
 	
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-	
-	public ProjectsUsers(ProjectsUsersId projectsUsersId, User user, Project project) {
-		super();
-		this.projectsUsersId = projectsUsersId;
-		this.user = user;
-		this.project = project;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
+//
+//	public Project getProject() {
+//		return project;
+//	}
+//
+//	public void setProject(Project project) {
+//		this.project = project;
+//	}
+//	
+//	public ProjectsUsers(ProjectsUsersId projectsUsersId, User user, Project project) {
+//		super();
+//		this.projectsUsersId = projectsUsersId;
+//		this.user = user;
+//		this.project = project;
+//	}
 }

@@ -32,12 +32,12 @@ public class User extends IdEntity {
 	@Column(name = "money", nullable = false)
 	private int money;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<ProjectsUsers> projectsUsers;
+//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	private List<ProjectsUsers> projectsUsers;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	@JoinColumn(name = "roles_id", insertable = false, updatable = false)
+	@JoinColumn(name = "roles_id", insertable = true, updatable = true)
 	private Roles roles;
 	
 	public User() {}
@@ -78,13 +78,13 @@ public class User extends IdEntity {
 		this.money = money;
 	}
 	
-	public User(String firstname, String lastname, int money, List<ProjectsUsers> projectsUsers) {
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.money = money;
-		this.projectsUsers = projectsUsers;
-	}
+//	public User(String firstname, String lastname, int money, List<ProjectsUsers> projectsUsers) {
+//		super();
+//		this.firstname = firstname;
+//		this.lastname = lastname;
+//		this.money = money;
+//		this.projectsUsers = projectsUsers;
+//	}
 
 	public String toString(){
 		String info = String.format("User: %s", this.firstname);
