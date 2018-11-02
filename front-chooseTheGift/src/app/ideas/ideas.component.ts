@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, NgModule} from '@angular/core';
+import { Component, OnInit, Input, NgModule } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { IdeaModel } from './../models/idea.model';
@@ -11,11 +11,11 @@ interface Items {
   price: number;
 }
 
-export const ITEMS : Items [] = [
-  {imgIdea: '../assets/images/random_img.jpg', price: 6 },
-  {imgIdea: '../assets/images/random_img.jpg', price: 12 },
-  {imgIdea: '../assets/images/random_img.jpg', price: 170 },
-   {imgIdea: '../assets/images/random_img.jpg', price: 170 }
+export const ITEMS: Items[] = [
+  { imgIdea: '../assets/images/random_img.jpg', price: 6 },
+  { imgIdea: '../assets/images/random_img.jpg', price: 12 },
+  { imgIdea: '../assets/images/random_img.jpg', price: 170 },
+  { imgIdea: '../assets/images/random_img.jpg', price: 170 }
 ];
 
 @Component({
@@ -29,7 +29,7 @@ export class IdeasComponent implements OnInit {
 
   private ideas: Array<IdeaModel>;
   private idea: IdeaModel;
-  
+
   wasClicked = false;
   idee = false;
 
@@ -64,9 +64,9 @@ export class IdeasComponent implements OnInit {
     })
   }
 
-  like(e, idee, idea:IdeaModel) {
+  like(e, idee, idea: IdeaModel) {
     this.wasClicked = !this.wasClicked;
-    if(this.wasClicked) {
+    if (this.wasClicked) {
       e.jaime = true;
       idee.target.style.color = '#f53b57';
     } else {
@@ -76,7 +76,21 @@ export class IdeasComponent implements OnInit {
   }
 
   selected(idea: IdeaModel) {
-    sessionStorage.setItem('idea', JSON.stringify(idea));
-    this.router.navigate(['/cart']);
+    // sessionStorage.setItem("idea", JSON.stringify(idea));
+    // this.router.navigate(['/cart']);
+    let array = [];
+    let test = [];
+    let i;
+
+    sessionStorage.setItem('array', JSON.stringify(idea));
+    array = JSON.parse(sessionStorage.getItem("array"));
+    // console.log(sessionStorage.array);
+    test.push(JSON.parse(sessionStorage.getItem("array")));
+    // console.log(test);
+
+    // for(i=0; i < test.length; i++) {
+    //   console.log(test[i]);
+    // }
+ 
   }
 }

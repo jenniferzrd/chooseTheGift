@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from "@angular/router";
 import { ProjectModel } from './../models/project.model';
 import { ProjectService } from './project.service';
+import { UserModel } from '../models/user.model';
+import { UserService } from '../user/user.service';
 
 // interface Projects {
 //   title: string;
@@ -26,14 +28,18 @@ export class ProjectComponent implements OnInit {
   // projects: Projects[];
 
   private projects: Array<ProjectModel>;
+  users: UserModel[] = [];
+  total: number = 0;
 
   constructor(
-    private projectService: ProjectService, 
+    private projectService: ProjectService,
+    private userService: UserService, 
     private router: Router) { }
 
   ngOnInit() {
     // this.projects = PROJECTS;
     this.loadProjects();
+    this.getUsersPrice();
   }
 
   loadProjects() {
@@ -52,6 +58,15 @@ export class ProjectComponent implements OnInit {
       this.projects = data;
       this.loadProjects();
     })
+  }
+
+  getUsersPrice() {
+    this.userService.getUsers().subscribe(users => {
+      this.users = users;
+      this.users.forEach(user => {
+        this.total = this.total + user.money;
+      });
+    });
   }
 
 }

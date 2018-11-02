@@ -1,130 +1,3 @@
-<!-- <app-create-idea></app-create-idea> -->
-<!-- 
-<div class="row d-flex justify-content-center">
-  <div *ngFor="let item of items">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <div card-header class="header">
-
-            <div class="text-right marginb-btnedit-btndelete">
-              <button type="button" class="btn btn-edit text-color-orange" (click)="onEdit(i)">
-                <i class="fa fa-edit"></i>
-              </button>
-              <button type="button" class="btn btn-delete text-color-red" (click)="onDelete(i)">
-                <i class="fa fa-trash"></i>
-              </button>
-            </div>
-
-            <img src="{{ item.imgIdea }}" class="imgIdea card-img-top" alt="photo_article">
-
-          </div>
-
-          <div class="d-flex price-and-like">
-            <div class="col">
-              <button type="button" class="btn btn-like" (click)="like(item)">
-                <i class="fa fa-heart"></i>
-              </button>
-            </div>
-            <div class="col text-right">
-              <h5 class="card-title text-color-darkpurple">
-                {{ item.price }} €
-              </h5>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>  -->
-
-<!-- OLD -->
-<!-- <div class="row d-flex justify-content-center">
-  <div *ngFor="let idea of ideas">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <div card-header class="header">
-
-            <div class="text-right marginb-btnedit-btndelete">
-              <button type="button" class="btn btn-edit text-color-orange" (click)="edit(idea)">
-                <a routerLink="/createidea">
-                  <i class="fa fa-edit"></i>
-                </a>
-              </button>
-              <button type="button" class="btn btn-delete text-color-red" (click)="delete(idea)">
-                <i class="fa fa-trash"></i>
-              </button>
-            </div>
-
-            <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
-          </div>
-
-          <div class="d-flex price-and-like">
-            <div class="col">
-              <button type="button" class="btn btn-like" (click)="like(item)">
-                <i class="fa fa-heart"></i>
-              </button>
-            </div>
-            <div class="col text-right">
-              <h5 class="card-title text-color-darkpurple">
-                {{ idea.price }} €
-              </h5>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row d-flex justify-content-center">
-    <div class="addIdea"></div>
-      <a routerLink="/createidea">
-        <i class="fa fa-2x fa-plus-circle"></i>
-      </a>
-    </div>
-</div> -->
-
-<!-- <div class="container">
-        <div class="row d-flex justify-content-around">
-            <div *ngFor="let item of items" class="col-6 paddingzero test">
-              
-              <div class="card">
-
-                  <div card-header class="header">
-
-                      <div class="text-right">
-                        <button type="button" class="btn btn-edit text-color-orange" (click)="onEdit(i)">
-                          <i class="fa fa-edit"></i>
-                        </button>
-                        <button type="button" class="btn btn-delete text-color-red" (click)="onDelete(i)">
-                          <i class="fa fa-trash"></i>
-                        </button>
-                      </div>
-          
-            <img class="card-img-top" src="{{ item.imgIdea }}" alt="Card image cap">
-            
-          </div>
-
-          <div class="d-flex">
-              <div class="col">
-                <button type="button" class="btn btn-like" (click)="like(item)">
-                  <i class="fa fa-heart"></i>
-                </button>
-              </div>
-              <div class="col text-right">
-                <h5 class="card-title text-color-darkpurple">
-                  {{ item.price }} €
-                </h5>
-              </div>
-            </div>
-</div>
-</div>
-        </div>
-</div> -->
-
-
 <div class="container mbottom">
 
     <div class="container-title-page">
@@ -144,13 +17,17 @@
         </div>
       </div>
 
+      <button class="btn-check" (click)="selected($event)">
+        <i class="fa fa-check-circle"></i>
+         </button>
+
   <div class="row d-flex justify-content-around">
-    <div *ngFor="let idea of ideas" class="col-6 paddingzero padding-between-idea mtop">
+    <div *ngFor="let idea of ideas" class="col-6 padding-between-idea mtop">
 
       <div class="card">
           <div card-header class="header">
 
-            <div class="text-right">
+            <div class="text-right pright">
               <button type="button" class="btn btn-edit paddingzero" (click)="edit(idea)">
                 <a routerLink="/createidea">
                   <i class="fa fa-edit"></i>
@@ -162,8 +39,7 @@
             </div>
           </div>
 
-          <img src="{{ idea.img }}" class="imgIdea card-img-top" alt="photo_article">
-
+          <div class="img-card" [ngStyle]="{ 'background-image': 'url(' + idea.img + ')'}"></div>
 
         <div class="card-body paddingzero">
             <p class="text-card font-lato text-color-darkpurple"> {{ idea.title }} </p>
@@ -186,9 +62,11 @@
               {{ idea.price }} €
             </h5>
           </div>
+          
         </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

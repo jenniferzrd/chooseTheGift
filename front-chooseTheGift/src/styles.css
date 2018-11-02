@@ -5,6 +5,7 @@
     background: -webkit-linear-gradient(-45deg, #575fcf 0%,#81ecec 60%); 
     background: linear-gradient(135deg, #575fcf 0%,#81ecec 60%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575fcf', endColorstr='#81ecec',GradientType=1 );
+    height: 100vh;
 } */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
@@ -90,7 +91,7 @@
 }
 
 .btn-like:hover {
-    color:#ffeaa7;
+    color:#ffeaa7 !important;
 }
 
 .btn-check {

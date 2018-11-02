@@ -99,6 +99,11 @@
         </div>
       </div>
  
+      <div class="text-center">
+          <span>La somme récolté est de</span> 
+          <span> {{ total }} &#x20AC; </span>
+      </div>
+
       <div *ngFor="let project of projects" class="border-container">
        
         <!-- <div class="row">
@@ -119,14 +124,14 @@
         <div class="row border-row">
           <div class="col-6">
             <span class="project-title font-oxy"> 
-                <a routerLink="/ideas">  
+                <a routerLink="/ideas" class="text-color-darkpurple">  
                   {{project.title}}
                   </a>
             </span>
           </div>
           
           <div class="col text-right font-price font-oxy">
-            <span> {{project.totalmoney}} €</span>
+            <span> {{project.totalmoney}}  &#x20AC;</span>
           </div>
 
           <div class="col d-flex align-items-center">

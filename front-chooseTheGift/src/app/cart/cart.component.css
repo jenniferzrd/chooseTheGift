@@ -1,0 +1,22 @@
+.border-validate-idea {
+    border: 1px solid grey;
+    padding: 20px;
+}
+
+.img-cart {
+    background-position: center;
+    background-size: cover;
+    height: 100px;
+}
+
+.mtop {
+    margin-top: 60px;
+}
+
+.ptop {
+    padding-top: 20px;
+}
+
+.pright {
+    padding-right: 10px;
+}
