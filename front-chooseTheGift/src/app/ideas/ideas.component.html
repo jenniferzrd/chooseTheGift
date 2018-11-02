@@ -9,17 +9,13 @@
 
           <div class="col-4 text-left">
             <a routerLink="/createidea">
-              <i class="fa fa-2x fa-plus-circle"></i>
+              <i class="fa fa-2x fa-plus-circle text-color-blue"></i>
             </a>
           </div>
 
         </div>
         </div>
       </div>
-
-      <button class="btn-check" (click)="selected($event)">
-        <i class="fa fa-check-circle"></i>
-         </button>
 
   <div class="row d-flex justify-content-around">
     <div *ngFor="let idea of ideas" class="col-6 padding-between-idea mtop">
@@ -42,7 +38,7 @@
           <div class="img-card" [ngStyle]="{ 'background-image': 'url(' + idea.img + ')'}"></div>
 
         <div class="card-body paddingzero">
-            <p class="text-card font-lato text-color-darkpurple"> {{ idea.title }} </p>
+            <p class="text-card font-lato text-color-grey"> {{ idea.title }} </p>
 
         <div class="d-flex">
           <div class="col d-flex align-items-center">
@@ -58,9 +54,9 @@
 
           </div>
           <div class="col text-right">
-            <h5 class="card-title text-color-darkpurple">
+            <span class="card-title text-color-darkpurple text-color-lightgrey text-size-price-idea">
               {{ idea.price }} €
-            </h5>
+            </span>
           </div>
           
         </div>

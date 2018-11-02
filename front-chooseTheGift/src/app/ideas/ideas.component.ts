@@ -38,7 +38,7 @@ export class IdeasComponent implements OnInit {
 
   constructor(
     private ideasService: IdeasService, private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     // MOCK
@@ -68,29 +68,37 @@ export class IdeasComponent implements OnInit {
     this.wasClicked = !this.wasClicked;
     if (this.wasClicked) {
       e.jaime = true;
-      idee.target.style.color = '#f53b57';
+      idee.target.style.color = '#ffa801';
     } else {
       e.jaime = false;
-      idee.target.style.color = '#fab1a0';
+      idee.target.style.color = '#ffa801';
     }
   }
 
   selected(idea: IdeaModel) {
-    // sessionStorage.setItem("idea", JSON.stringify(idea));
+    sessionStorage.setItem("idea", JSON.stringify(idea));
     // this.router.navigate(['/cart']);
-    let array = [];
-    let test = [];
-    let i;
+    // let array = [];
+    // let test = [];
+    // let i;
+    // let a = [];
 
-    sessionStorage.setItem('array', JSON.stringify(idea));
-    array = JSON.parse(sessionStorage.getItem("array"));
+    // sessionStorage.setItem('array', JSON.stringify(idea));
+    // array = JSON.parse(sessionStorage.getItem("array"));
     // console.log(sessionStorage.array);
-    test.push(JSON.parse(sessionStorage.getItem("array")));
+    // test.push(JSON.parse(sessionStorage.getItem("array")));
     // console.log(test);
 
     // for(i=0; i < test.length; i++) {
+    //   a.push(test[i]);
     //   console.log(test[i]);
+    //   console.log(a);
     // }
  
+    // while(sessionStorage.getItem("array")) {
+    //   test.push(JSON.parse(sessionStorage.getItem("array")));
+    // }
+
   }
+  
 }

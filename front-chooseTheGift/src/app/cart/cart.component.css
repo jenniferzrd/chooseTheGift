@@ -6,7 +6,7 @@
 .img-cart {
     background-position: center;
     background-size: cover;
-    height: 100px;
+    height: 80px;
 }
 
 .mtop {
@@ -19,4 +19,10 @@
 
 .pright {
     padding-right: 10px;
+}
+
+.container-message {
+    border: 1px solid #ffa801;
+    margin-top: 30px;
+    padding: 20px;
 }

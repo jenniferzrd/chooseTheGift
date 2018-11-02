@@ -35,9 +35,20 @@
     color:#f53b57;
 }
 
+.text-color-blue {
+    color: #34ace0;
+}
 
 .text-color-flashturquoise {
     color: #81ecec;
+}
+
+.text-color-lightgrey {
+    color: #aeaba3;
+}
+
+.text-color-grey {
+    color: #4a4742;
 }
 
 /* POSITION */
@@ -57,7 +68,7 @@
 }
 
 .padding-top-form-element {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .padding-top-zero {
@@ -112,7 +123,7 @@
 }
 
 .title-page-short {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .font-oxy {

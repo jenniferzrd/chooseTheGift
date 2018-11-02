@@ -40,6 +40,10 @@
     margin: 0;
 }
 
+.text-size-price-idea {
+    font-size: 16px;
+}
+
 /* BUTTON */
 
 .btn-like {

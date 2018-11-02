@@ -38,4 +38,9 @@
 
 .ptop {
     padding-top: 20px;
+} 
+
+.container-user-money {
+    background-color: #ffa801;
+    color: white;
 }

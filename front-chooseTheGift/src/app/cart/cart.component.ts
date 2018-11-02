@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { IdeaModel } from '../models/idea.model';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../user/user.service';
+import { IdeasService } from '../ideas/ideas.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [IdeasService, UserService]
 })
 export class CartComponent implements OnInit {
 
@@ -16,20 +18,23 @@ export class CartComponent implements OnInit {
   message : String = "";
 
   users: UserModel[] = [];
-  // ideas: IdeaModel[] = [];
+  ideas: IdeaModel[] = [];
+
   total: number= 0;
   result: number = 0;
 
   constructor(
     private userService: UserService,
+    private ideaService: IdeasService,
     private router: Router) {
 
-        if (sessionStorage.getItem("idea")) {
-          this.idea = JSON.parse(sessionStorage.getItem("idea"));
+        // if (sessionStorage.getItem("idea")) {
+        //   this.idea = JSON.parse(sessionStorage.getItem("idea"));
+        // }
 
           // let a = [1, 2, 3];
 
-          let array = [];
+          // let array = [];
           
           // localStorage.setItem("a", JSON.stringify(a));
           // a = JSON.parse(localStorage.getItem("a"));
@@ -39,8 +44,7 @@ export class CartComponent implements OnInit {
           // console.log(array);
           // Re-serialize the array back into a string and store it in localStorage
           // sessionStorage.setItem('idea', JSON.stringify(array));
-        }
-
+        // }
   }
 
   ngOnInit() { 
@@ -55,26 +59,34 @@ export class CartComponent implements OnInit {
 
   getResultCart() {
     let resultSubUserMoneyIdeaPrice;
-    let selectedIdeaPrice = this.idea.price;
 
-    this.userService.getUsers().subscribe(users => {
-      this.users = users;
-      this.users.forEach(user => {
-        this.total = this.total + user.money;
+    if(this.idea == undefined) {
+      this.idea = new IdeaModel;
+      this.idea.price = null;
+    } 
+    
+    else {
+      let selectedIdeaPrice = this.idea.price;
+
+      this.userService.getUsers().subscribe(users => {
+        this.users = users;
+        this.users.forEach(user => {
+          this.total = this.total + user.money;
+        });
+  
+        let totalUserMoney = this.total;
+        resultSubUserMoneyIdeaPrice = totalUserMoney - selectedIdeaPrice;
+  
+        if(resultSubUserMoneyIdeaPrice <= 0 ) {
+          this.message = "Attention, vous avez dépassé le budget";
+          document.getElementById("mess").style.color = '#ffa801';
+        } else {
+          this.message = "Vous avez encore du budget"
+          document.getElementById("mess").style.color = '#ffa801';
+        }
+  
       });
-
-      let totalUserMoney = this.total;
-      resultSubUserMoneyIdeaPrice = totalUserMoney - selectedIdeaPrice;
-
-      if(resultSubUserMoneyIdeaPrice <= 0 ) {
-        console.log("great")
-        this.message = "Vous ne disposez plus de fonds";
-      } else {
-        console.log("vous pouvez continuer vos achats");
-        this.message = "Attention, vous avez dépassé le budget"
-      }
-
-    });
+    }
   }
 
 }
