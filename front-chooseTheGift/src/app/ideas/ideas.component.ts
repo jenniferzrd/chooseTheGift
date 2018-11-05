@@ -6,17 +6,19 @@ import { IdeasService } from './ideas.service';
 
 /// DONNEES MOCK ///
 
-interface Items {
-  imgIdea: string;
-  price: number;
-}
+// interface Items {
+//   imgIdea: string;
+//   price: number;
+// }
 
-export const ITEMS: Items[] = [
-  { imgIdea: '../assets/images/random_img.jpg', price: 6 },
-  { imgIdea: '../assets/images/random_img.jpg', price: 12 },
-  { imgIdea: '../assets/images/random_img.jpg', price: 170 },
-  { imgIdea: '../assets/images/random_img.jpg', price: 170 }
-];
+// export const ITEMS: Items[] = [
+//   { imgIdea: '../assets/images/random_img.jpg', price: 6 },
+//   { imgIdea: '../assets/images/random_img.jpg', price: 12 },
+//   { imgIdea: '../assets/images/random_img.jpg', price: 170 },
+//   { imgIdea: '../assets/images/random_img.jpg', price: 170 }
+// ];
+
+/// FIN DONNEES MOCK ///
 
 @Component({
   selector: 'app-ideas',
@@ -30,20 +32,26 @@ export class IdeasComponent implements OnInit {
   private ideas: Array<IdeaModel>;
   private idea: IdeaModel;
 
+  storeItems: IdeaModel[] = [];
+  errorMessage: string;
+
   wasClicked = false;
   idee = false;
 
   // MOCK
-  items: Items[];
+  // items: Items[];
 
   constructor(
-    private ideasService: IdeasService, private router: Router
+    private ideasService: IdeasService, 
+    private router: Router
   ) {}
 
   ngOnInit() {
     // MOCK
-    this.items = ITEMS;
+    // this.items = ITEMS;
+
     this.loadIdeas();
+ 
   }
 
   loadIdeas() {
@@ -76,7 +84,12 @@ export class IdeasComponent implements OnInit {
   }
 
   selected(idea: IdeaModel) {
+    // SESSIONSTORAGE
     sessionStorage.setItem("idea", JSON.stringify(idea));
+    // SESSIONSTORAGE
+
+    // this.cartService.addToCart(idea);
+
     // this.router.navigate(['/cart']);
     // let array = [];
     // let test = [];
@@ -101,4 +114,12 @@ export class IdeasComponent implements OnInit {
 
   }
   
+// VIEUX TEST
+  // addToFavorite (idea, event) {
+  //   this.test.addCharacter(idea);
+  //   console.log("idea components");
+  //   console.log(this.test.addCharacter(idea));
+  // }
+// FIN VIEUX TEST
+
 }

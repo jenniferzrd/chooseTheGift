@@ -7,5 +7,4 @@ export class IdeaModel extends ParentEntity {
     public price: number;
     public jaime: boolean;
     public quantity: number;
-
 }

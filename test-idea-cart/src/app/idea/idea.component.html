@@ -1,0 +1,10 @@
+<p>
+  idea works!
+</p>
+
+<div *ngFor="let idea of storeItems">
+  {{ idea.id }}
+  {{ idea.title }}
+  <button type="button" (click)="addIdeaInCart(idea.id)">Add to Cart</button>
+</div>
+

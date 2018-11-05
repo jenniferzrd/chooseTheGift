@@ -30,7 +30,6 @@
           <div class="text-center">
             {{idea.title}} 
           </div>
-          <!-- <div class="row">{{idea.comment}} </div> -->
         </div>
 
         <div class="col-3">
@@ -55,7 +54,7 @@
           </div>
 
       <div class="col-6">
-        <button type="submit" (click)="validation()" class="col-12 btn btn-default btn-save">
+        <button type="submit" (click)="validation($event)" class="col-12 btn btn-default btn-save">
           Valider
         </button>
       </div>
@@ -63,4 +62,4 @@
     </div>
   </form>
 
-</div>
+</div> 

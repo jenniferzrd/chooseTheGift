@@ -18,7 +18,10 @@
       </div>
 
   <div class="row d-flex justify-content-around">
+ 
     <div *ngFor="let idea of ideas" class="col-6 padding-between-idea mtop">
+        <!-- <div *ngFor="let idea of storeItems" class="col-6 padding-between-idea mtop"> -->
+      {{ idea.id }}
 
       <div class="card">
           <div card-header class="header">
@@ -51,6 +54,10 @@
             <button class="btn-check" *ngIf="idea.jaime === true" (click)="selected(idea)">
             <i class="fa fa-check-circle"></i>
              </button>
+
+          <!-- <button class="btn-check" *ngIf="idea.jaime === true" (click)="addIdeaInCart(idea.id)">
+            <i class="fa fa-check-circle"></i>
+             </button> -->
 
           </div>
           <div class="col text-right">

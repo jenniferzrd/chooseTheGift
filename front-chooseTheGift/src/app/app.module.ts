@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from "@angular/common/http";
+import {HttpModule} from '@angular/http';
 import { FormsModule } from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
@@ -22,11 +23,12 @@ import { MatTabsModule } from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { CartComponent } from './cart/cart.component';
+import { ItemComponent } from './item/item.component';
+import { ShopComponent } from './shop/shop.component';
+import { ItemService } from './item/item.service';
 
 @NgModule({
   declarations: [
@@ -39,11 +41,14 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     ProjectComponent,
     CreateProjectComponent,
-    CartComponent
+    CartComponent,
+    ItemComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),
@@ -63,7 +68,7 @@ import { CartComponent } from './cart/cart.component';
     MatSelectModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
