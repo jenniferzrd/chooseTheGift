@@ -75,19 +75,27 @@
 }
 
 .padding-between-idea:nth-child(2n+1) {
-    padding-left: 0px;
+    /* padding-left: 0px; */
     padding-right:4px !important;
 }
 
 .padding-between-idea:nth-child(2n) {
     padding-left: 4px !important;
-    padding-right: 0px;
+    /* padding-right: 0px; */
 }
 
 .header div :nth-child(even) {
     padding-right: 30px !important;
 }
 
+.ptop-correction {
+    padding-top: 0;
+}
+
+.card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 /* .paddingl {
     padding: 0 0 0 2px;

@@ -9,3 +9,12 @@ a {
 .card {
     margin: 10px;
 }
+
+.delete-p-left-right {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pleft {
+    padding-left: 30px;
+}

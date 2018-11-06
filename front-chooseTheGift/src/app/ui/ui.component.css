@@ -38,7 +38,7 @@ a {
 
 .nav-bottom {
     background-color: white;
-    border-top: 1px solid black;
+    border-top: 1px solid #e7e4e4;
     margin-top:30px;
 }
 
@@ -48,7 +48,49 @@ a {
 }
 
 .ampoule {
-    fill: red;
     width: 30px;
     height: 30px;
+}
+
+.dialogue {
+    width: 30px;
+    height: 30px;
+}
+
+.money {
+    width: 30px;
+    height: 30px;
+}
+
+.active > .dialogue{
+    fill: #f57665
+}
+
+.active > .ampoule{
+    fill: #f57665
+}
+
+.active > .money{
+    fill: #f57665
+}
+
+.active > .fusee{
+    fill: #f57665;
+}
+
+.nav-bottom {
+    background-color:white;
+}
+
+.phone {
+    color: grey;
+    background: black;
+}
+
+.project-name {
+    padding-left: 10px;
+}
+
+.phone-logo {
+    padding-right: 10px;
 }

@@ -45,6 +45,14 @@
 }
 
 .container-user-money {
-    background-color: #ffa801;
+    background-color: #ffcd3c;
     color: white;
+}
+
+.center-vertical {
+    display: flex;
+}
+
+.mauto {
+    margin: auto;
 }
