@@ -79,34 +79,29 @@
       </div>
   </div> -->
 
-  <!-- NEW -->
-  
-  <div class="container">
-      <div class="container-title-page">
-        <div class="row">
-          <div class="container-fluid d-flex align-items-center">
-          <div class="col-8 text-right title-page font-lato">
-            PROJETS
-          </div>
+<!-- NEW -->
 
-          <div class="col-4 text-left">
-            <a routerLink="/createproject">
-              <i class="fa fa-2x fa-plus-circle text-color-blue"></i>
-            </a>
-          </div>
+<div class="container horizontal-center">
+  <div class="container-title-page d-flex align-items-center justify-content-center background-header">
 
-        </div>
-        </div>
-      </div>
- 
-      <div class="text-center container-user-money font-oxy">
-          <span>La somme récolté est de</span> 
-          <span> {{ total }} &#x20AC; </span>
-      </div>
+    <span class="title-page font-lato"> PROJETS </span>
 
-      <div *ngFor="let project of projects" class="border-container">
-       
-        <!-- <div class="row">
+    <div class="pleft">
+      <a routerLink="/createproject">
+        <i class="fa fa-2x fa-plus-circle text-color-blue"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="text-center container-user-money font-oxy">
+    <span>La somme récolté est de</span>
+    <span> {{ total }} &#x20AC; </span>
+  </div>
+
+  <div *ngFor="let project of projects" class="border-container">
+
+    <!-- <div class="row">
           <div class="col text-right">
                 <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
                   <a routerLink="/createproject">
@@ -121,31 +116,30 @@
             </div> 
         </div> -->
 
-        <div class="row border-row">
-          <div class="col-6">
-            <span class="project-title font-oxy"> 
-                <a routerLink="/ideas" class="text-color-darkpurple">  
-                  {{project.title}}
-                  </a>
-            </span>
-          </div>
-          
-          <div class="col text-right font-price font-oxy">
-            <span> {{project.totalmoney}}  &#x20AC;</span>
-          </div>
+    <div class="row border-row">
+      <div class="col-6">
+        <span class="project-title font-oxy">
+          <a routerLink="/ideas" class="text-color-darkpurple">
+            {{project.title}}
+          </a>
+        </span>
+      </div>
 
-          <div class="col d-flex align-items-center">
-              <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
-                  <a routerLink="/createproject">
-                    <i class="fa fa-edit"></i>
-                  </a>
-                </button>
-                
-                <button type="button" class="btn btn-delete paddingzero text-color-red" (click)="delete(project)">
-                  <i class="fa fa-trash"></i>
-                </button>
-          </div>
-        </div>
+      <div class="col text-right font-price font-oxy">
+        <span> {{project.totalmoney}} &#x20AC;</span>
+      </div>
+
+      <div class="col d-flex align-items-center">
+        <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
+          <a routerLink="/createproject">
+            <i class="fa fa-edit"></i>
+          </a>
+        </button>
+
+        <button type="button" class="btn btn-delete paddingzero text-color-red" (click)="delete(project)">
+          <i class="fa fa-trash"></i>
+        </button>
       </div>
     </div>
-  
+  </div>
+</div>

@@ -67,6 +67,7 @@
 }
 .mbottom {
     margin-bottom: 50px;
+    padding: 0;
 }
 
 .marginb-btnedit-btndelete {
@@ -83,6 +84,11 @@
     padding-right: 0px;
 }
 
+.header div :nth-child(even) {
+    padding-right: 30px !important;
+}
+
+
 /* .paddingl {
     padding: 0 0 0 2px;
 }
@@ -91,9 +97,9 @@
     padding: 0 2px 0 0;
 } */
 
-.pright {
+/* .pright {
     padding-right: 10px;
-}
+} */
 
 .img-card {
     height: 200px;

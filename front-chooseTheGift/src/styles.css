@@ -15,6 +15,11 @@
 .bg-white {
     background: white;
 }
+
+.background-header {
+    background: #3cf8d0;
+}
+
 .text-color-darkpurple {
     color: #28263F;
 }
@@ -53,13 +58,17 @@
 
 /* POSITION */
 
+.horizontal-center {
+    margin: 0 auto !important;
+}
+
 .container-title-page {
-    padding: 50px 5px 50px 5px;
+    padding: 50px 0px 50px 0px;
     border-bottom: 1px solid lightgray;
 }
 
 .container-title-page-short {
-    padding: 10px 5px 10px 5px;
+    padding: 10px 0px 10px 0px;
     border-bottom: 1px solid lightgray;
 }
 
@@ -120,10 +129,12 @@
 
 .title-page {
     font-size: 30px;
+    color:white;
 }
 
 .title-page-short {
     font-size: 15px;
+    color:white;
 }
 
 .font-oxy {

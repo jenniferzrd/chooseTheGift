@@ -1,75 +1,65 @@
 <div class="container mbottom">
 
-    <div class="container-title-page">
-        <div class="row">
-          <div class="container-fluid d-flex align-items-center">
-          <div class="col-8 text-right title-page font-lato">
-            GALLERIE
-          </div>
+  <div class="container-title-page background-header d-flex align-items-center justify-content-center">
+    <span class="title-page font-lato"> GALLERIE </span>
 
-          <div class="col-4 text-left">
-            <a routerLink="/createidea">
-              <i class="fa fa-2x fa-plus-circle text-color-blue"></i>
-            </a>
-          </div>
-
-        </div>
-        </div>
-      </div>
+    <div class="pleft">
+      <a routerLink="/createidea">
+        <i class="fa fa-2x fa-plus-circle text-color-blue"></i>
+      </a>
+    </div>
+  </div>
 
   <div class="row d-flex justify-content-around">
- 
+
     <div *ngFor="let idea of ideas" class="col-6 padding-between-idea mtop">
-        <!-- <div *ngFor="let idea of storeItems" class="col-6 padding-between-idea mtop"> -->
-      {{ idea.id }}
+      <!-- <div *ngFor="let idea of storeItems" class="col-6 padding-between-idea mtop"> -->
 
       <div class="card">
-          <div card-header class="header">
-
-            <div class="text-right pright">
-              <button type="button" class="btn btn-edit paddingzero" (click)="edit(idea)">
-                <a routerLink="/createidea">
-                  <i class="fa fa-edit"></i>
-                </a>
-              </button>
-              <button type="button" class="btn btn-delete text-color-red paddingzero" (click)="delete(idea)">
-                <i class="fa fa-trash"></i>
-              </button>
-            </div>
+        <div card-header class="header">
+          <div class="text-right pright">
+            <button type="button" class="btn btn-edit paddingzero" (click)="edit(idea)">
+              <a routerLink="/createidea">
+                <i class="fa fa-edit"></i>
+              </a>
+            </button>
+            <button type="button" class="btn btn-delete text-color-red paddingzero" (click)="delete(idea)">
+              <i class="fa fa-trash"></i>
+            </button>
           </div>
+        </div>
 
-          <div class="img-card" [ngStyle]="{ 'background-image': 'url(' + idea.img + ')'}"></div>
+        <div class="img-card" [ngStyle]="{ 'background-image': 'url(' + idea.img + ')'}"></div>
 
         <div class="card-body paddingzero">
-            <p class="text-card font-lato text-color-grey"> {{ idea.title }} </p>
+          <p class="text-card font-lato text-color-grey"> {{ idea.title }} </p>
 
-        <div class="d-flex">
-          <div class="col d-flex align-items-center">
+          <div class="d-flex">
+            <div class="col d-flex align-items-center">
 
-            <button type="button" class="btn btn-like" (click)="like(idea, $event)">
-              <i class="fa fa-heart"></i>
-            </button>
+              <button type="button" class="btn btn-like" (click)="like(idea, $event)">
+                <i class="fa fa-heart"></i>
+              </button>
 
-            <!-- {{ idea.jaime }} -->
-            <button class="btn-check" *ngIf="idea.jaime === true" (click)="selected(idea)">
-            <i class="fa fa-check-circle"></i>
-             </button>
+              <!-- {{ idea.jaime }} -->
+              <button class="btn-check" *ngIf="idea.jaime === true" (click)="selected(idea)">
+                <i class="fa fa-check-circle"></i>
+              </button>
 
-          <!-- <button class="btn-check" *ngIf="idea.jaime === true" (click)="addIdeaInCart(idea.id)">
+              <!-- <button class="btn-check" *ngIf="idea.jaime === true" (click)="addIdeaInCart(idea.id)">
             <i class="fa fa-check-circle"></i>
              </button> -->
 
+            </div>
+            <div class="col text-right">
+              <span class="card-title text-color-darkpurple text-color-lightgrey text-size-price-idea">
+                {{ idea.price }} €
+              </span>
+            </div>
+
           </div>
-          <div class="col text-right">
-            <span class="card-title text-color-darkpurple text-color-lightgrey text-size-price-idea">
-              {{ idea.price }} €
-            </span>
-          </div>
-          
-        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

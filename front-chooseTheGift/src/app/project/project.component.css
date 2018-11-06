@@ -40,6 +40,10 @@
     padding-top: 20px;
 } 
 
+.pleft {
+    padding-left: 30px;
+}
+
 .container-user-money {
     background-color: #ffa801;
     color: white;

@@ -25,10 +25,9 @@ export class CartComponent implements OnInit {
 
   users: UserModel[] = [];
   itemCart: IdeaModel[] = [];
-  resultSubUserMoneyIdeaPrice : number = 0;
+  resultSubUserMoneyIdeaPrice;
 
   total: number = 0;
-  result: number = 0;
 
   constructor(
     private userService: UserService,
@@ -99,7 +98,6 @@ export class CartComponent implements OnInit {
   }
 
   getResultCart() {
-    let resultSubUserMoneyIdeaPrice;
 
     if(this.idea == undefined) {
       this.idea = new IdeaModel;
@@ -116,9 +114,9 @@ export class CartComponent implements OnInit {
         });
 
         let totalUserMoney = this.total;
-        resultSubUserMoneyIdeaPrice = totalUserMoney - selectedIdeaPrice;
+        this.resultSubUserMoneyIdeaPrice = totalUserMoney - selectedIdeaPrice;
 
-        if(resultSubUserMoneyIdeaPrice <= 0 ) {
+        if(this.resultSubUserMoneyIdeaPrice <= 0 ) {
           this.message = "Attention, vous avez dépassé le budget";
           document.getElementById("mess").style.color = '#ffa801';
           
@@ -131,10 +129,14 @@ export class CartComponent implements OnInit {
     }
   }
 
-  validation(e) {
-    e = this.resultSubUserMoneyIdeaPrice;
-    this.message = "Il vous reste " +  + " sur votre cagnotte";
-    console.log(e);
+  validation() {
+    let result = this.resultSubUserMoneyIdeaPrice;
+    if(result >= 0) {
+      this.message = "Il vous reste " + result + " euros sur votre cagnotte";
+    } else {
+    this.message = "Très bon choix ! C'est Validé !";
+    sessionStorage.clear();
+    }
   }
 
 
