@@ -22,6 +22,10 @@ import { ItemComponent } from './item/item.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItemService } from './item/item.service';
 import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth/auth.component';
+import { TokenStorageService } from './auth/token-storage.service';
+import { AuthService } from './auth/auth.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { LoginComponent } from './login/login.component';
     CartComponent,
     ItemComponent,
     ShopComponent,
-    LoginComponent
+    LoginComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ItemService],
+  providers: [ItemService, TokenStorageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
