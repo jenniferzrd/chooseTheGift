@@ -38,7 +38,9 @@ export class CartComponent implements OnInit {
     this.itemCart = [];
 
     if (sessionStorage.getItem("idea")) {
+      debugger
       this.idea = JSON.parse(sessionStorage.getItem("idea"));
+      console.log(this.idea);
     }
 
     // ESSAI LOCALSTORAGE

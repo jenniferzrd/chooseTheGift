@@ -65,11 +65,11 @@ public class UserController {
 	private boolean validate(User user) {
 		boolean isValid = true;
 
-		if (StringUtils.trimToNull(user.getFirstname()) == null) {
+		if (StringUtils.trimToNull(user.getUsername()) == null) {
 			isValid = false;
 		}
 
-		if (StringUtils.trimToNull(user.getLastname()) == null) {
+		if (StringUtils.trimToNull(user.getUsername()) == null) {
 			isValid = false;
 		}
 

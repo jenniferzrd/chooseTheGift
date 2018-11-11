@@ -20,8 +20,15 @@ export class CreateUserComponent implements OnInit {
       
       if (sessionStorage.getItem("user")) {
         this.user = JSON.parse(sessionStorage.getItem("user"));
+        console.log(this.user);
+        sessionStorage.clear();
       } else {
         this.user = new UserModel();
+        this.user.name = "";
+        this.user.email = "";
+        this.user.password = "";
+        this.user.username = "";
+        this.user.money = 0;
       }
      }
 

@@ -12,13 +12,19 @@ export class CreateUserService {
   public validate(user: UserModel): boolean {
     let isValid = true;
 
-    if (!user.firstname) {
+    if (!user.name) {
       isValid = false;
     }
-    if (!user.lastname) {
+    if (!user.username) {
       isValid = false;
     }
     if (!user.money) {
+      isValid = false;
+    }
+    if (!user.password) {
+      isValid = false;
+    }
+    if (!user.email) {
       isValid = false;
     }
     return isValid;

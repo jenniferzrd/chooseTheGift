@@ -1,93 +1,170 @@
 package com.cyg.models;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.CascadeType;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
-@Table(name="user")
-@Access(AccessType.FIELD)
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+            "username"
+        }),
+        @UniqueConstraint(columnNames = {
+            "email"
+        })
+})
 
-public class User extends IdEntity {
+public class User {
 
-	private static final long serialVersionUID = 1314151617181920L;	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(name = "firstname", nullable = false, length = 45)
-	private String firstname;
-	@Column(name = "lastname", nullable = false, length = 45)
-	private String lastname;
-	@Column(name = "money", nullable = false)
+    @NotBlank
+    @Size(min=3, max = 50)
+    private String name;
+
+    @NotBlank
+    @Size(min=3, max = 50)
+    private String username;
+
+    @NaturalId
+    @NotBlank
+    @Size(max = 50)
+    @Email
+    private String email;
+
+    @NotBlank
+    @Size(min=6, max = 100)
+    private String password;
+	
+    @Column(name = "money")
 	private int money;
 	
-//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//	private List<ProjectsUsers> projectsUsers;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	@JoinColumn(name = "roles_id", insertable = true, updatable = true)
-	private Roles roles;
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_roles", 
+    	joinColumns = @JoinColumn(name = "user_id"), 
+    	inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Roles> roles = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_projets", 
+    	joinColumns = @JoinColumn(name = "userp_id"), 
+    	inverseJoinColumns = @JoinColumn(name = "projet_id"))
+    private Set<Project> projects = new HashSet<>();
 	
 	public User() {}
 	
-	public String getFirstname() {
-		return firstname;
-	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	
-	public int getMoney() {
-		return money;
-	}
-	public void setMoney(int money) {
-		this.money = money;
-	}
-	
-	public Roles getRoles() {
-		return roles;
-	}
+    public User(String name, String username, String email, String password) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
-	public void setRoles(Roles roles) {
+    
+    public User(Long id, String name, String username, String email,
+			String password, int money, Set<Roles> roles) {
+		
+		this.id = id;
+		this.name = name;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.money = money;
 		this.roles = roles;
 	}
 
-	public User(String firstname, String lastname, int money) {
-		
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.money = money;
+	public User(String username, Set<Project> projects) {
+		super();
+		this.username = username;
+		this.projects = projects;
 	}
 	
-//	public User(String firstname, String lastname, int money, List<ProjectsUsers> projectsUsers) {
-//		super();
-//		this.firstname = firstname;
-//		this.lastname = lastname;
-//		this.money = money;
-//		this.projectsUsers = projectsUsers;
-//	}
+	public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+	public Set<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Roles> roles) {
+        this.roles = roles;
+    }
+
+	public Set<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjets(Set<Project> projects) {
+		this.projects = projects;
+	}
 
 	public String toString(){
-		String info = String.format("User: %s", this.firstname);
+		String info = String.format("User: %s", this.name);
 		return info;
 	}
 	

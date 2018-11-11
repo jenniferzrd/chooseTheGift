@@ -1,57 +1,54 @@
 package com.cyg.models;
 
-import java.util.List;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
 @Table(name="roles")
-@Access(AccessType.FIELD)
 
-public class Roles extends IdEntity {
+public class Roles {
 	
-	@Column(name = "roles_rolecode")
-	private String roles_rolecode;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(name = "roles_rolename")
-	private String roles_rolename;
-	
-	@OneToMany(targetEntity=User.class,cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-	@JsonIgnore
-	private List<User> user;
-//	User user;
-//	
-	public Roles() {}
-	
-	public String getRoles_rolecode() {
-		return roles_rolecode;
-	}
+    @Enumerated(EnumType.STRING)
+    @NaturalId
+    @Column(length = 60)
+    private Rolename name;
 
-	public void setRoles_rolecode(String roles_rolecode) {
-		this.roles_rolecode = roles_rolecode;
-	}
+    public Roles() {}
 
-	public String getRoles_rolename() {
-		return roles_rolename;
-	}
-	
-	public Roles(String roles_rolecode, String roles_rolename) {
-		
-		this.roles_rolecode = roles_rolecode;
-		this.roles_rolename = roles_rolename;
-	}
+    public Roles(Rolename name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Rolename getName() {
+        return name;
+    }
+
+    public void setName(Rolename name) {
+        this.name = name;
+    }
 
 	public String toString(){
-		String info = String.format("Roles: %s", this.roles_rolename);
+		String info = String.format("Roles: %s", this.name);
 		return info;
 	}
 
