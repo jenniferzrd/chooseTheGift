@@ -47,35 +47,14 @@ a {
     padding-bottom: 10px;
 }
 
-.ampoule {
+.icon {
     width: 30px;
     height: 30px;
 }
 
-.dialogue {
-    width: 30px;
-    height: 30px;
-}
 
-.money {
-    width: 30px;
-    height: 30px;
-}
-
-.active > .dialogue{
+.active > .icon{
     fill: #f57665
-}
-
-.active > .ampoule{
-    fill: #f57665
-}
-
-.active > .money{
-    fill: #f57665
-}
-
-.active > .fusee{
-    fill: #f57665;
 }
 
 .nav-bottom {

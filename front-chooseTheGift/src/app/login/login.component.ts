@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from '../auth/token-storage.service';
 import { AuthService } from '../auth/auth.service';
 import { AuthLoginInfo } from '../auth/login-info';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,12 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
+  info: any;
 
   constructor(
     private authService: AuthService, 
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,6 +31,12 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
     }
+
+    this.info = {
+      token: this.tokenStorage.getToken(),
+      username: this.tokenStorage.getUsername(),
+      authorities: this.tokenStorage.getAuthorities()
+    };
 
   }
 
@@ -47,7 +56,8 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.reloadPage();
+        // this.reloadPage();
+        this.router.navigate(['/home']);
       },
       error => {
         console.log(error);
@@ -58,6 +68,11 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
+    window.location.reload();
+  }
+
+  logout() {
+    this.tokenStorage.signOut();
     window.location.reload();
   }
 
