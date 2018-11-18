@@ -76,6 +76,9 @@ ffcd3c variante orange  */
     color: #4a4742;
 }
 
+.text-bold {
+    font-weight: bold;
+}
 /* POSITION */
 
 .horizontal-center {
@@ -155,7 +158,7 @@ ffcd3c variante orange  */
 
 .title-page-short {
     font-size: 15px;
-    color:white;
+    color:#28263F;
     font-weight: bold;
 }
 
@@ -174,4 +177,8 @@ ffcd3c variante orange  */
 
 a {
     text-decoration: none !important;
+}
+
+.mbottom {
+    margin-bottom: 50px;
 }

@@ -37,9 +37,9 @@ a {
 }
 
 .nav-bottom {
-    background-color: white;
-    border-top: 1px solid #e7e4e4;
-    margin-top:30px;
+    background-color:rgba(255, 255, 255, 1);
+    /* border-top: 1px solid #e7e4e4; */
+    /* margin-top:30px; */
 }
 
 .test {
@@ -55,10 +55,6 @@ a {
 
 .active > .icon{
     fill: #f57665
-}
-
-.nav-bottom {
-    background-color:white;
 }
 
 .phone {

@@ -56,7 +56,6 @@ export class IdeasComponent implements OnInit {
 
   loadIdeas() {
     this.ideasService.getIdeas().subscribe(res => {
-      debugger
       this.ideas = res;
     })
   };

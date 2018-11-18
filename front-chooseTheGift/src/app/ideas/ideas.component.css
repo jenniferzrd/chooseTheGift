@@ -109,6 +109,10 @@
     padding-right: 10px;
 } */
 
+.pl15px {
+    padding-left: 15px;
+}
+
 .img-card {
     height: 200px;
     background-position: center;

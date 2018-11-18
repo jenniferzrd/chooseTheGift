@@ -75,19 +75,20 @@
             </div> 
         </div> -->
 
-        <div class="row border-row">
+        <div class="row border-row align-items-center">
           <div class="col-6">
             <span class="project-title font-oxy">
               <a routerLink="/ideas" class="text-color-darkpurple">
                 {{project.title}}
               </a>
             </span>
+            <span style="display: block"> {{ project.comment}} </span>
           </div>
 
           <div class="col text-right font-price font-oxy">
             <span> {{project.totalmoney}} &#x20AC;</span>
           </div>
-
+           
           <div class="col d-flex align-items-center">
             <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
               <a routerLink="/createproject">
@@ -99,6 +100,7 @@
               <i class="fa fa-trash"></i>
             </button>
           </div>
+
         </div>
       </div>
  

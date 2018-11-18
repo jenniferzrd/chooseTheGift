@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'index', component: AppComponent },
     { path: 'home', component: HomeComponent },
     { path: 'users', component: UserComponent },

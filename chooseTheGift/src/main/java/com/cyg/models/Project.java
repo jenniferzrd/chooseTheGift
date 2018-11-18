@@ -17,7 +17,9 @@ public class Project extends IdEntity {
 	private String title;
 	@Column(name = "totalmoney")
 	private int totalMoney;
-
+	@Column(name = "comment")
+	private String comment;
+	
 	public Project() {}
 	
 	public String getTitle() {
@@ -34,9 +36,18 @@ public class Project extends IdEntity {
 		this.totalMoney = totalMoney;
 	}
 	
-	public Project(String title, int totalMoney) {
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Project(String title, int totalMoney, String comment) {
 	this.title = title;
 	this.totalMoney = totalMoney;
+	this.comment = comment;
 }
 	
 	public String toString(){
