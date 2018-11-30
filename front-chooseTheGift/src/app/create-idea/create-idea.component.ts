@@ -33,12 +33,10 @@ export class CreateIdeaComponent implements OnInit {
   ngOnInit() { }
 
   public saveOrUpdateIdea(): void {
-    console.log("save or update");
       this.isValid = this.createIdeaService.validate(this.idea);
       if (this.isValid) {
         this.createIdeaService.saveOrUpdateIdea(this.idea).subscribe(res => {
           if (res.responseCode == OK) {
-            console.log("return sur home")
             this.router.navigate(['/home']);
 
           } else {
@@ -47,9 +45,19 @@ export class CreateIdeaComponent implements OnInit {
           }
         });
       } else {
-        this.message = "Les champs * sont requis";
+        if(isNaN(this.idea.price)) {
+          this.message = "Oups ! Il y a une erreur... Veuillez mettre un prix";
+          document.getElementById("price").style.borderColor = 'red';
+        }
+        else {
+          this.message = "Les champs * sont requis";
+        }
       }
       sessionStorage.clear();
+  }
+
+  return() {
+    this.router.navigate(['/project']);
   }
 
   // saveOrUpdateIdea() {

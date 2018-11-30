@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OK } from '../models/httpstatus.model';
+import { OK, BAD_VALUE } from '../models/httpstatus.model';
 import { ProjectModel } from '../models/project.model';
 import { CreateProjectService } from './create-project.service';
 
@@ -41,8 +41,16 @@ export class CreateProjectComponent implements OnInit {
           this.isValid = false;
         }
       });
-    } else {
-      this.message = "Les champs * sont requis";
+    } 
+    else {
+     if (isNaN(this.project.totalmoney)) {
+        document.getElementById("totalmoney").style.borderColor = 'red';
+        this.message = "Oups ! Il y a une erreur dans l'indication du prix";
+      }
+      else {
+        this.message = "Les champs * sont requis";
+      }
+      
     }
     sessionStorage.clear();
   }

@@ -14,7 +14,10 @@ export class CreateIdeaService {
 
     if (isNaN(idea.price)) {
       isValid = false;
-      console.log("its not a number !");
+    }
+
+    if(!idea.title) {
+      isValid = false;
     }
 
     return isValid;

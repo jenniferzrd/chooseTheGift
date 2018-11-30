@@ -7,6 +7,8 @@ import { RestResponse } from '../models/restResponse.model';
 @Injectable()
 export class CreateProjectService {
 
+  money: ProjectModel[];
+
   constructor(private http: HttpClient) { }
 
   public validate(project: ProjectModel): boolean {
@@ -15,6 +17,10 @@ export class CreateProjectService {
     if (!project.title) {
       isValid = false;
     }
+    if (isNaN(project.totalmoney)) {
+      isValid = false;
+    }
+
     return isValid;
   }
   public saveOrUpdateProject(project: ProjectModel): Observable<RestResponse> {
