@@ -54,10 +54,19 @@
 
 .fa-plus-circle {
     padding-left: 10px; 
+    font-size: 40px;
 }
 
 .fa-check-circle {
     padding-left: 10px;
+}
+
+.shp0 { fill: #fa2859 } 
+.shp1 { fill: white} 
+
+.icon {
+    width: 35px;
+    height: 35px;
 }
 
 /* CORRECTION POSITION  */
@@ -117,4 +126,8 @@
     height: 200px;
     background-position: center;
     background-size: cover;
+}
+
+.pleft {
+    padding-left: 17px;
 }

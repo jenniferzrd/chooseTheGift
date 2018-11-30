@@ -47,4 +47,8 @@ export class CreateProjectComponent implements OnInit {
     sessionStorage.clear();
   }
 
+  return() {
+    this.router.navigate(['/project']);
+  }
+
 }

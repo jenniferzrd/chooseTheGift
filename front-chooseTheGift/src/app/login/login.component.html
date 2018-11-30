@@ -1,11 +1,15 @@
-<div class="container background-login d-flex flex-column justify-content-center">
+<div class="container-fluid background-login d-flex flex-column justify-content-center">
 
   <div class="logo d-flex justify-content-center"> CHOOSE THE GIFT </div>
 
   <div *ngIf="isLoggedIn; else loggedOut">
     <!-- Logged in as {{roles}}. -->
     <div class="row justify-content-center">
-      <button class="btn btn-secondary" (click)="logout()">Déconnexion</button>
+        <a routerLink="/home">
+          <button class="btn btn-signin text-color-white">Retour</button>
+          </a>
+          
+      <button class="btn btn-login text-color-white mleft" (click)="logout()">Déconnexion</button>
     </div>
   </div>
 

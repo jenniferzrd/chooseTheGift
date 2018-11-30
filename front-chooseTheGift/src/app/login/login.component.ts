@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
-
+    
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
