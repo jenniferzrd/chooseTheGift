@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { UserService } from '../user/user.service';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-ui',
@@ -12,8 +13,19 @@ export class UiComponent implements OnInit {
 
   users: UserModel[] = [];
   total: number = 0;
+  hideElement = false;
   
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { 
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/login') {
+          this.hideElement = true;
+        }  else {
+          this.hideElement = false;
+        }
+      }
+    });
+  }
 
   ngOnInit() {
 
