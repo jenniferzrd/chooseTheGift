@@ -45,8 +45,12 @@ export class CreateIdeaComponent implements OnInit {
           }
         });
       } else {
-        if(isNaN(this.idea.price)) {
-          this.message = "Oups ! Il y a une erreur... Veuillez mettre un prix";
+        if (!this.idea.title) {
+          this.message = "Les champs * sont requis";
+          document.getElementById("title").style.borderColor = 'red';
+        }
+        else if (isNaN(this.idea.price) || !this.idea.price) {
+          this.message = "Oups ! Il y a une erreur dans l'indication du prix";
           document.getElementById("price").style.borderColor = 'red';
         }
         else {

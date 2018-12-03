@@ -1,0 +1,13 @@
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.mtop {
+    margin-top: 40px;
+}

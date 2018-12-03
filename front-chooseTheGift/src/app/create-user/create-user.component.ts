@@ -52,5 +52,8 @@ export class CreateUserComponent implements OnInit {
     sessionStorage.clear();
   }
 
+  return() {
+    this.router.navigate(['/project']);
+  }
 
 }

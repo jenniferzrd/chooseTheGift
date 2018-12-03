@@ -17,15 +17,15 @@ export class CreateProjectComponent implements OnInit {
   private message: string = "";
 
   constructor(
-    private createProjectService: CreateProjectService, 
+    private createProjectService: CreateProjectService,
     private router: Router) {
-      
-      if (sessionStorage.getItem("project")) {
-        this.project = JSON.parse(sessionStorage.getItem("project"));
-      } else {
-        this.project = new ProjectModel();
-      }
-     }
+
+    if (sessionStorage.getItem("project")) {
+      this.project = JSON.parse(sessionStorage.getItem("project"));
+    } else {
+      this.project = new ProjectModel();
+    }
+  }
 
   ngOnInit() {
   }
@@ -41,16 +41,20 @@ export class CreateProjectComponent implements OnInit {
           this.isValid = false;
         }
       });
-    } 
+    }
+
     else {
-     if (isNaN(this.project.totalmoney)) {
-        document.getElementById("totalmoney").style.borderColor = 'red';
+      if (!this.project.title) {
+        this.message = "Les champs * sont requis";
+        document.getElementById("title").style.borderColor = 'red';
+      }
+      else if (isNaN(this.project.totalmoney) || !this.project.totalmoney) {
         this.message = "Oups ! Il y a une erreur dans l'indication du prix";
+        document.getElementById("totalmoney").style.borderColor = 'red';
       }
       else {
         this.message = "Les champs * sont requis";
       }
-      
     }
     sessionStorage.clear();
   }

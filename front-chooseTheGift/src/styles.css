@@ -169,7 +169,7 @@ ffcd3c variante orange  */
 
 .btn-return {
     background:none;
-    border: 1px solid #27f6bf;
+    border: 1px solid #27f6bf !important;
     border-radius: 10px;
     color: #27f6bf;
 }

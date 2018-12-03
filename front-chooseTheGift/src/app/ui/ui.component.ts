@@ -18,7 +18,7 @@ export class UiComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url === '/login') {
+        if (event.url === '/login' || event.url === '/register') {
           this.hideElement = true;
         }  else {
           this.hideElement = false;
@@ -32,9 +32,7 @@ export class UiComponent implements OnInit {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
       this.users.forEach(user => {
-        // console.log(user.money);
         this.total = this.total + user.money;
-        // console.log(this.total);
       });
     });
   }

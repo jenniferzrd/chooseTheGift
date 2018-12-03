@@ -18,3 +18,23 @@ a {
 .pleft {
     padding-left: 30px;
 }
+
+.mtop {
+    margin-top: 30px;
+}
+
+.font-lato {
+    font-weight: bold;
+}
+
+.shp0 { fill: #fa2859 } 
+.shp1 { fill: white} 
+
+.icon {
+    width: 35px;
+    height: 35px;
+}
+
+.height {
+    height: 100vh;
+}
