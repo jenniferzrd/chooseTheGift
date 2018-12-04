@@ -61,7 +61,7 @@ export class CreateIdeaComponent implements OnInit {
   }
 
   return() {
-    this.router.navigate(['/project']);
+    this.router.navigate(['/ideas']);
   }
 
   // saveOrUpdateIdea() {

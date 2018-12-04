@@ -86,41 +86,6 @@ ffcd3c variante orange  */
 .text-bold {
     font-weight: bold;
 }
-/* POSITION */
-
-.horizontal-center {
-    margin: 0 auto !important;
-}
-
-.container-fluid {
-    padding: 0;
-}
-
-.container-title-page {
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px solid lightgray;
-}
-
-.container-title-page-short {
-    padding: 10px 0px 10px 0px;
-    border-bottom: 1px solid lightgray;
-}
-
-.padding-top-form {
-    padding-top: 30px;
-}
-
-.padding-top-form-element {
-    padding-top: 10px;
-}
-
-.padding-top-zero {
-    padding-top: 0 !important;
-}
-
-.paddingzero {
-    padding: 0 !important;
-}
 
 /* BUTTONS */
 
@@ -183,10 +148,35 @@ ffcd3c variante orange  */
     color: white;
 }
 
+.btn-signin {
+    background:none;
+    border: 1px solid white !important;
+    border-radius: 10px;
+    color: white;
+}
+
 /* FONTS */
+
+.font-oxy {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.font-lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.text-bold {
+    font-weight: bold;
+}
 
 .title-page {
     font-size: 30px;
+    color:white;
+    font-weight: bold;
+}
+
+.title-page-medium {
+    font-size: 20px;
     color:white;
     font-weight: bold;
 }
@@ -197,21 +187,63 @@ ffcd3c variante orange  */
     font-weight: bold;
 }
 
-.font-oxy {
-    font-family: 'Oxygen', sans-serif;
+/* FORMS */
+
+.form-control {
+    border-radius: 0px !important;
+    font-size: 10px;
 }
 
-.font-lato {
-    font-family: 'Lato', sans-serif;
-}
-.text-bold {
+label {
+    font-size: 13px;
     font-weight: bold;
 }
 
-/* AUTRES */
+.message {
+    color:red;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
 
-a {
-    text-decoration: none !important;
+.bg-pattern-party {
+    background: url(./assets/images/pattern.svg);
+}
+
+/* SVG ICON */
+
+.shp0 { fill: #fa2859 } 
+.shp1 { fill: white} 
+
+.icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* CONTAINER HEADER */
+
+.container-title-page {
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px solid lightgray;
+}
+
+.container-title-page-short {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid lightgray;
+}
+
+.container-title-page-medium {
+    padding: 30px 0px 30px 0px;
+}
+
+/* MARGIN PADDING */
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.horizontal-center {
+    margin: 0 auto !important;
 }
 
 .mbottom {
@@ -220,4 +252,30 @@ a {
 
 .mleft {
     margin-left: 17px;
+}
+
+.padding-top-form {
+    padding-top: 30px;
+}
+
+.padding-top-form-element {
+    padding-top: 10px;
+}
+
+.padding-top-zero {
+    padding-top: 0 !important;
+}
+
+.paddingzero {
+    padding: 0 !important;
+}
+
+.marginzero {
+    margin: 0 !important;
+}
+
+/* AUTRES */
+
+a {
+    text-decoration: none !important;
 }

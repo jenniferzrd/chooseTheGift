@@ -1,48 +1,8 @@
- .link {
-    text-decoration: none;
-    color:#28263F;
-}
-
-a {
-    text-decoration: none;
-    color:#28263F;
-}
-
-.bandeau {
-    padding: 40px 40px 20px 40px;
-    /* background-color: white; */
-}
-
-.fa-user-size {
-    font-size: 23px;
-    padding: 0px 5px 0px 5px;
-}
-
-.delete-padding {
-    padding: 0;
-}
-
-.total-cagnotte {
-    padding: 0 10px 0 10px;
-}
-
-.string-and-total {
-    background-color: white;
-    padding: 10px;
-}
-
-.participants {
-    background-color: white;
-    padding: 10px 0px 10px 0px; 
-}
-
 .nav-bottom {
     background-color:rgba(255, 255, 255, 1);
-    /* border-top: 1px solid #e7e4e4; */
-    /* margin-top:30px; */
 }
 
-.test {
+.ptpb10px {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -51,7 +11,6 @@ a {
     width: 30px;
     height: 30px;
 }
-
 
 .active > .icon{
     fill: #f57665
@@ -62,10 +21,10 @@ a {
     background: black;
 }
 
-.project-name {
-    padding-left: 10px;
-}
-
 .phone-logo {
     padding-right: 10px;
+}
+
+.project-name {
+    padding-left: 10px;
 }

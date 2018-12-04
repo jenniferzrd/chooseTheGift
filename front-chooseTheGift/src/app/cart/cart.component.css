@@ -9,10 +9,6 @@
     height: 80px;
 }
 
-.mtop {
-    margin-top: 100px;
-}
-
 .ptop {
     padding-top: 20px;
 }
@@ -37,6 +33,13 @@
     color: #25edb8;
 }
 
-.center-vertical {
-    margin-top: 30px;
+.container-fluid {
+    height: 74vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.bg-white {
+    background: white;
 }

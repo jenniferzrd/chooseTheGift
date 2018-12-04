@@ -142,14 +142,6 @@
     -webkit-animation-name: tada;
     animation-name: tada
   }
- 
-.shp0 { fill: #fa2859 } 
-.shp1 { fill: white} 
-
-.icon {
-    width: 35px;
-    height: 35px;
-}
 
 .height {
     height: 100vh;

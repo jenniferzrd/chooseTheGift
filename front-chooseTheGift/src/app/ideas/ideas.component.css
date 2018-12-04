@@ -61,14 +61,6 @@
     padding-left: 10px;
 }
 
-.shp0 { fill: #fa2859 } 
-.shp1 { fill: white} 
-
-.icon {
-    width: 35px;
-    height: 35px;
-}
-
 /* CORRECTION POSITION  */
 
 .mtop {
@@ -105,18 +97,6 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-
-/* .paddingl {
-    padding: 0 0 0 2px;
-}
-
-.paddingr {
-    padding: 0 2px 0 0;
-} */
-
-/* .pright {
-    padding-right: 10px;
-} */
 
 .pl15px {
     padding-left: 15px;
