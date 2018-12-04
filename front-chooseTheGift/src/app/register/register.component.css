@@ -1,8 +1,29 @@
 .container-fluid {
-    padding: 0;
-    margin: 0;
+    height: 74vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
 }
 
-.mtop {
-    margin-top: 40px;
+.container {
+    /* padding-top: 60px;
+    padding-bottom: 60px; */
+    /* background: white; */
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0.5; /* Firefox */
+    font-size: 10px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0.5
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    opacity: 0.5
+}
+
+input:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0; /* Firefox */
 }
