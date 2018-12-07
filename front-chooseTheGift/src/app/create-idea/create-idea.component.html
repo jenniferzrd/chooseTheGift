@@ -9,12 +9,12 @@
 </div>
 <!-- HEADER -->
 
-<div class="container-fluid bg-pattern-party">
+<div class="container-fluid bg-pattern-party d-flex align-items-center justify-content-center">
   <div class="container">
     <form class="form-horizontal main-form">
       <div class="form-group">
         <label class="control-label col-sm-2" for="img">
-          <span class="required font-oxy">Lien de l'image :</span>
+          <span class="required font-oxy">Lien de l'image</span>
         </label>
         <div class="col-12">
           <input type="text" class="form-control" name="imgIdea" id="imgidea" [(ngModel)]="idea.img" placeholder="Uploader une image">
@@ -36,7 +36,7 @@
       </div>
       <div class="form-group">
         <label class="control-label col-sm-2 font-oxy" for="price">
-          <span class="required">*Prix:</span>
+          <span class="required">*Prix</span>
         </label>
         <div class="col-12">
           <input type="text" class="form-control" name="price" [(ngModel)]="idea.price" id="price" placeholder="Saisissez son prix">

@@ -3,18 +3,9 @@
     padding: 24px;
 }
 
-.container {
-    padding: 0;
-    margin: 0;
-}
-
 .container-user-money {
     background-color: #ffcd3c;
     color: white;
-}
-
-.center-vertical {
-    display: flex;
 }
 
 .container-fluid {
@@ -24,20 +15,6 @@
 
 .font-price {
     font-weight: lighter;
-}
-
-.imgProject {
-    width: 83px;
-    height: 58px;
-    border: solid lightgray 2px;
-}
-
-.mauto {
-    margin: auto;
-}
-
-.no-padding {
-    padding: 0;
 }
 
 ::ng-deep .mat-tab-labels {
@@ -54,10 +31,6 @@
     font-weight: bold;
 }
 
-.ptop {
-    padding-top: 20px;
-} 
-
 .pleft {
     padding-left: 17px;
 }
@@ -71,11 +44,6 @@
     animation: tada 1s ease 1s 3;
   }
 
-  /* .loop {
-    animation: tada 2s ease 2s 2 normal;
-  } */
-
-  /*the animation definition*/
   @-webkit-keyframes tada {
     0% {
       -webkit-transform: scale3d(1, 1, 1);
@@ -142,7 +110,3 @@
     -webkit-animation-name: tada;
     animation-name: tada
   }
-
-.height {
-    height: 100vh;
-}

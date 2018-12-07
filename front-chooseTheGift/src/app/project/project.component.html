@@ -40,20 +40,10 @@
   </div>
 </div>  -->
 
-<div class="container-fluid horizontal-center">
-  <div class="container-title-page d-flex align-items-center justify-content-center background-header">
-
+<div class="container-title-page d-flex align-items-center justify-content-center background-header">
     <span class="title-page font-lato"> PROJETS </span>
-
     <div class="pleft">
       <a routerLink="/createproject">
-        <!-- <i class="fa fa-2x fa-plus-circle text-color-pink tada animated loop"></i>
-         -->
-        <!-- <span class="fa-stack tada animated loop d-flex justify-content-center">
-            <i class="fa fa-circle fa-stack-1x icon-a text-color-pink"></i>
-            <i class="fa fa-plus fa-stack-1x icon-b"></i>
-        </span> -->
-
         <div class="tada animated loop">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439 439" width="439" height="439">
             <g id="bg">
@@ -68,7 +58,6 @@
         </div>
       </a>
     </div>
-
   </div>
 
   <div class="text-center container-user-money font-oxy">
@@ -76,7 +65,7 @@
     <span> {{ total }} &#x20AC; </span>
   </div>
 
-  <div class="">
+<div class="container">
   <div *ngFor="let project of projects" class="border-container">
     <div class="row border-row align-items-center">
       <div class="col-6">
@@ -92,13 +81,12 @@
         <span> {{project.totalmoney}} &#x20AC;</span>
       </div>
 
-      <div class="col d-flex align-items-center">
+      <div class="col-1 d-flex align-items-center">
         <button type="button" class="btn btn-edit paddingzero" (click)="edit(project)">
           <a routerLink="/createproject">
             <i class="fa fa-edit"></i>
           </a>
         </button>
-
         <button type="button" class="btn btn-delete paddingzero text-color-red" (click)="delete(project)">
           <i class="fa fa-trash"></i>
         </button>
@@ -106,6 +94,4 @@
 
     </div>
   </div>
-</div>
-
 </div>
