@@ -1,4 +1,4 @@
-.container-fluid {
+.height {
     height: 74vh; 
 }
 
@@ -17,4 +17,8 @@
 
 input:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     opacity: 0; /* Firefox */
+}
+
+form {
+    padding-top:20px;
 }
