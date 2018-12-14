@@ -11,18 +11,20 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'index', component: AppComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'users', component: UserComponent },
-    { path: 'ideas', component: IdeasComponent },
-    { path: 'createusers', component: CreateUserComponent },
-    { path: 'project', component: ProjectComponent },
-    { path: 'createidea', component: CreateIdeaComponent },
-    { path: 'createproject', component: CreateProjectComponent },
-    { path: 'cart', component: CartComponent },
+    { path: 'index', component: AppComponent, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
+    { path: 'ideas', component: IdeasComponent, canActivate: [AuthGuard] },
+    { path: 'createusers', component: CreateUserComponent, canActivate: [AuthGuard] },
+    { path: 'project', component: ProjectComponent, canActivate: [AuthGuard] },
+    { path: 'createidea', component: CreateIdeaComponent, canActivate: [AuthGuard] },
+    { path: 'createproject', component: CreateProjectComponent, canActivate: [AuthGuard] },
+    { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'register', component: RegisterComponent},
+    { path: '**', redirectTo: '/login', pathMatch: 'full'},
 ];

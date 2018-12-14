@@ -26,6 +26,7 @@ import { AuthComponent } from './auth/auth.component';
 import { TokenStorageService } from './auth/token-storage.service';
 import { AuthService } from './auth/auth.service';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ItemService, TokenStorageService, AuthService],
+  providers: [ItemService, TokenStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
