@@ -44,14 +44,15 @@
           <input type="text" class="form-control" name="money" [(ngModel)]="user.money" id="money" placeholder="Saisissez la somme que vous souhaitez donner">
         </div>
       </div>
+
+      <p class="message"> {{ message }} </p>
+
       <div class="form-group">
         <div class="col-12">
           <button type="submit" (click)="return()" class="col-5 btn btn-return">Retour</button>
           <button type="submit" (click)="saveOrUpdate()" class="mleft col-6 btn btn-login">Valider</button>
         </div>
       </div>
-
-      <p> {{ message }} </p>
 
     </form>
   </div>

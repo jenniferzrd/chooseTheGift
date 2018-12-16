@@ -131,13 +131,13 @@ export class CartComponent implements OnInit {
   }
 
   validation() {
-    let result = this.resultSubUserMoneyIdeaPrice;
-    if(result >= 0) {
-      this.message = "Il vous reste " + result + " euros sur votre cagnotte";
-    } else {
+    // let result = this.resultSubUserMoneyIdeaPrice;
+    // if(result >= 0) {
+    //   this.message = "Il vous reste " + result + " euros sur votre cagnotte";
+    // } else {
     this.message = "Très bon choix ! C'est Validé !";
     sessionStorage.clear();
-    }
+    // }
   }
 
 

@@ -22,3 +22,8 @@ input:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 form {
     padding-top:20px;
 }
+
+.message {
+    color: red;
+    text-align: center
+}
