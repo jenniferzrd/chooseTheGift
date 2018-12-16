@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { TokenStorageService } from '../auth/token-storage.service';
 import { UserService } from '../user/user.service';
@@ -41,20 +41,20 @@ export class UiComponent implements OnInit {
     });
 
     if (this.tokenStorage.getToken()) {
+      console.log("test");
       this.roles = this.tokenStorage.getAuthorities();
       this.roles.every(role => {
-        if (role === 'ROLE_ADMIN') {
+        if (role === 'ROLE_ADMIN' || role === 'ROLE_PM') {
           this.authority = 'admin';
-          return false;
-        } else if (role === 'ROLE_PM') {
-          this.authority = 'pm';
-          return false;
+          console.log("admin");
+          return true;
         }
         this.authority = 'user';
-        return true;
+        return false;
       });
     }
+
   }
 
-  
+
 }
